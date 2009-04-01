@@ -275,7 +275,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -317,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>myReQueueButton.m</string>
+								<string>myReQueueButton.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>myReQueueButton.m</string>
+										<string>myReQueueButton.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9AA51FB0F83D40F00FFC1C0</string>
+										<string>C9F0B4880F8400F000507459</string>
 										<key>history</key>
 										<array>
 											<string>C973B9550F729B8D00DF2593</string>
@@ -386,8 +385,6 @@
 											<string>C9B2A0B30F7BCA2B00FE0FD5</string>
 											<string>C9B2A0B40F7BCA2B00FE0FD5</string>
 											<string>C97FB5510F80275A0003353C</string>
-											<string>C9CF16310F810A1000ED3D71</string>
-											<string>C9CF16B70F8122B900ED3D71</string>
 											<string>C9CF16C80F8124BC00ED3D71</string>
 											<string>C98FAEC90F81B5F200AA6C60</string>
 											<string>C98FAECA0F81B5F200AA6C60</string>
@@ -399,13 +396,15 @@
 											<string>C93EB3620F838904008DE709</string>
 											<string>C93EB3630F838904008DE709</string>
 											<string>C93EB4230F838DB7008DE709</string>
-											<string>C93EB4470F8390B6008DE709</string>
 											<string>C93EB4510F83911D008DE709</string>
 											<string>C93EB45A0F83915B008DE709</string>
 											<string>C93EB4780F839202008DE709</string>
 											<string>C9C1246D0F83CDA400884A91</string>
-											<string>C9EA92680F83CDD90066075F</string>
-											<string>C9EA926D0F83CDD90066075F</string>
+											<string>C9B874480F83FEEF00B3E088</string>
+											<string>C9B874490F83FEEF00B3E088</string>
+											<string>C9B874560F83FFF200B3E088</string>
+											<string>C9B874570F83FFF200B3E088</string>
+											<string>C9B8745B0F84002800B3E088</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -540,9 +539,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C9AA51F80F83D40F00FFC1C0</string>
+				<string>C9F0B47B0F84003700507459</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>C9AA51F90F83D40F00FFC1C0</string>
+				<string>C9F0B47C0F84003700507459</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -676,7 +675,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C973B9280F7288CB00DF2593</string>
 		<string>/Users/flashit/Entwicklung/Mac-Dev/MediaNox/MediaNox.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -696,12 +694,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>GetPID.c</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -759,7 +759,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>C973B9280F7288CB00DF2593</string>
-				<string>C9AA51FA0F83D40F00FFC1C0</string>
+				<string>C9B8743E0F83FECA00B3E088</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -879,13 +879,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>C9EF2A860F83963300BC78C9</string>
+				<string>C9B8744E0F83FEEF00B3E088</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>C9EF2A870F83963300BC78C9</string>
-				<string>C9EF2A880F83963300BC78C9</string>
-				<string>C9EF2A890F83963300BC78C9</string>
-				<string>C9EF2A8A0F83963300BC78C9</string>
-				<string>C9EF2A8B0F83963300BC78C9</string>
+				<string>C9B8744F0F83FEEF00B3E088</string>
+				<string>C9B874500F83FEEF00B3E088</string>
+				<string>C9B874510F83FEEF00B3E088</string>
+				<string>C9B874520F83FEEF00B3E088</string>
+				<string>C9B874530F83FEEF00B3E088</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
