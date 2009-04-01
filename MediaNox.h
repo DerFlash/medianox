@@ -20,6 +20,8 @@
 	IBOutlet NSScrollView *statusTextScrollview;
 	IBOutlet NSArrayController *queueController;
 	
+	IBOutlet NSArrayController *ffmpegBinaries;
+	
 	IBOutlet NSProgressIndicator *monitorWheel;
 	
 	IBOutlet NSTableView *queueTable;
@@ -119,5 +121,7 @@
 - (void) changeTempMonitoredFolderToDefault: (id) sender;
 
 - (IBAction) showAboutDialog: (id) sender;
+
+-(void) prepareffmpegBinariesForSettingsView;
 
 @end

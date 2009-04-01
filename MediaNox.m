@@ -51,6 +51,44 @@
 		[self startMonitoringForFolder: [[NSUserDefaults standardUserDefaults] objectForKey: @"monitoredFolder"]];
 	}
 	
+	[self prepareffmpegBinariesForSettingsView];
+}
+
+-(void) prepareffmpegBinariesForSettingsView {
+	// ugly hack, the binaries should sit in an own folder to elminitate confusion of this function
+	
+	NSString *ffmpegBaseDir = [[[NSBundle mainBundle] pathForResource: @"ffmpeg" ofType: @""] stringByDeletingLastPathComponent];
+	
+	NSFileManager *fileMan = [NSFileManager defaultManager];
+
+	for (NSString *_files in [[NSFileManager defaultManager] contentsOfDirectoryAtPath: ffmpegBaseDir error: NULL]) {
+		if ([_files hasPrefix: @"ffmpeg"] && [fileMan isExecutableFileAtPath: [ffmpegBaseDir stringByAppendingPathComponent: _files]]) {
+			
+			
+			NSTask *ffmpegVersionCheckTask = [[NSTask alloc] init];
+			[ffmpegVersionCheckTask setLaunchPath: [ffmpegBaseDir stringByAppendingPathComponent: _files]];
+			[ffmpegVersionCheckTask setEnvironment: [NSDictionary dictionaryWithObjectsAndKeys: [[NSBundle mainBundle] pathForResource: @"fflibraries" ofType: @""], @"DYLD_LIBRARY_PATH", nil]];
+			
+			NSPipe *ffmpegVersionCheckPipe = [NSPipe pipe];
+			[ffmpegVersionCheckTask setStandardError: ffmpegVersionCheckPipe];
+			
+			NSFileHandle *ffmpegVersionCheckPipeHandle = [ffmpegVersionCheckPipe fileHandleForReading];
+			[ffmpegVersionCheckTask launch];
+			
+			NSString *ffmpegVersionCheckOutput = [[NSString alloc] initWithData: [ffmpegVersionCheckPipeHandle readDataToEndOfFile] encoding: NSUTF8StringEncoding];
+			
+			NSString *ffmpegVersionString = [ffmpegVersionCheckOutput stringByMatching:@"FFmpeg version ([^,]*)," capture: 1];
+			ffmpegVersionString = [NSString stringWithFormat: @"ffmpeg %@", ffmpegVersionString];
+			
+			[ffmpegBinaries addObject: [NSDictionary dictionaryWithObjectsAndKeys: _files, @"name", ffmpegVersionString, @"description", nil]];
+			
+			NSLog(@"OP:%@", ffmpegVersionString);
+			
+		}
+	}
+
+	
+//	[ffmpegBinaries add
 }
 
 - (NSApplicationTerminateReply) applicationShouldTerminate:(NSApplication *)sender {
@@ -339,8 +377,25 @@
 	// scroll to the row of the item
 	int indexOfMedia = [[queueController arrangedObjects] indexOfObject: mediaDict];
 	[queueTable scrollRowToVisible: indexOfMedia];
+
+
+	NSFileManager *fileMan = [NSFileManager defaultManager];
+	NSString *ffmpegBinSel = [[NSUserDefaults standardUserDefaults] objectForKey: @"ffmpegBinary"];
 	
-	NSString *ffmpegBin = [[NSBundle mainBundle] pathForResource: @"ffmpeg" ofType: @""];
+	if (!ffmpegBinSel) ffmpegBinSel = @"ffmpeg";
+	
+	NSString *ffmpegBin = [[NSBundle mainBundle] pathForResource: ffmpegBinSel ofType: @""];
+	if (![fileMan isExecutableFileAtPath: ffmpegBin]) {
+		[self doLog: [NSString stringWithFormat: @"Could not find the selected ffmpeg binary (%@)! Probing default...", ffmpegBin]];
+		ffmpegBin = [[NSBundle mainBundle] pathForResource: @"ffmpeg" ofType: @""];
+		if ([fileMan isExecutableFileAtPath: ffmpegBin]) [self doLog: [NSString stringWithFormat: @"... using default!"]];
+		else {
+			[self doLog: [NSString stringWithFormat: @"Could not find any suitable ffmpeg binary! Aborting..."]];
+			return NO;
+		}
+	}
+	
+	
 	NSString *orgFile = [mediaDict objectForKey: @"url"];
 	NSString *destFile = [mediaDict objectForKey: @"urlDestination"];
 	
