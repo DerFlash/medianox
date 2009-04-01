@@ -7,6 +7,23 @@
       <language>en</language>
       
 <item>
+	<title>Version 0.7 (138)</title>
+	  <sparkle:releaseNotesLink>
+	    http://medianox.googlecode.com/svn/trunk/138.html
+	  </sparkle:releaseNotesLink>
+	<pubDate>Wed, 01 Apr 2009 23:20:00 +0200</pubDate>
+	<enclosure
+		url="http://medianox.googlecode.com/files/MediaNox v0.7 138.zip"
+		sparkle:version="138"
+		sparkle:shortVersionString="0.7"
+		type="application/octet-stream"
+		length="8946270"
+		sparkle:dsaSignature="MC0CFGh7V8Q6t0E8jBrft+u2mPizBRKJAhUAoX/+k1miaXPppV2pP4BVWX0JaaU="
+	/>
+</item>
+
+	  
+<item>
 	<title>Version 0.6 (133)</title>
 	  <sparkle:releaseNotesLink>
 	    http://medianox.googlecode.com/svn/trunk/133.html
