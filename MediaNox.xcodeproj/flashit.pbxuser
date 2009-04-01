@@ -8,7 +8,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = C973B9190F7288B500DF2593 /* MediaNox */;
 		activeSDKPreference = macosx10.5;
 		activeTarget = 8D1107260486CEB800E47090 /* MediaNox */;
@@ -277,6 +277,23 @@
 			C92627330F840F010008BF64 /* PlistBookmark */ = C92627330F840F010008BF64 /* PlistBookmark */;
 			C92627340F840F010008BF64 /* PBXTextBookmark */ = C92627340F840F010008BF64 /* PBXTextBookmark */;
 			C92627350F840F010008BF64 /* PlistBookmark */ = C92627350F840F010008BF64 /* PlistBookmark */;
+			C92627440F8411CE0008BF64 /* PBXTextBookmark */ = C92627440F8411CE0008BF64 /* PBXTextBookmark */;
+			C92627450F8411CE0008BF64 /* PlistBookmark */ = C92627450F8411CE0008BF64 /* PlistBookmark */;
+			C92627460F8411CE0008BF64 /* PBXTextBookmark */ = C92627460F8411CE0008BF64 /* PBXTextBookmark */;
+			C92627470F8411CE0008BF64 /* PlistBookmark */ = C92627470F8411CE0008BF64 /* PlistBookmark */;
+			C92627480F8411CE0008BF64 /* PlistBookmark */ = C92627480F8411CE0008BF64 /* PlistBookmark */;
+			C92627490F8411CE0008BF64 /* PlistBookmark */ = C92627490F8411CE0008BF64 /* PlistBookmark */;
+			C926274A0F8411CE0008BF64 /* PlistBookmark */ = C926274A0F8411CE0008BF64 /* PlistBookmark */;
+			C926274B0F8411CE0008BF64 /* PBXTextBookmark */ = C926274B0F8411CE0008BF64 /* PBXTextBookmark */;
+			C926274C0F8411CE0008BF64 /* PlistBookmark */ = C926274C0F8411CE0008BF64 /* PlistBookmark */;
+			C926274D0F8411CE0008BF64 /* PBXTextBookmark */ = C926274D0F8411CE0008BF64 /* PBXTextBookmark */;
+			C926274E0F8411CE0008BF64 /* PlistBookmark */ = C926274E0F8411CE0008BF64 /* PlistBookmark */;
+			C92627500F8411E80008BF64 /* PlistBookmark */ = C92627500F8411E80008BF64 /* PlistBookmark */;
+			C92627530F8412190008BF64 /* PBXTextBookmark */ = C92627530F8412190008BF64 /* PBXTextBookmark */;
+			C92627540F8412190008BF64 /* PBXTextBookmark */ = C92627540F8412190008BF64 /* PBXTextBookmark */;
+			C92627550F8412190008BF64 /* PBXTextBookmark */ = C92627550F8412190008BF64 /* PBXTextBookmark */;
+			C92627560F8412190008BF64 /* PBXTextBookmark */ = C92627560F8412190008BF64 /* PBXTextBookmark */;
+			C92627570F84121B0008BF64 /* PlistBookmark */ = C92627570F84121B0008BF64 /* PlistBookmark */;
 			C93EB3610F838904008DE709 = C93EB3610F838904008DE709 /* PBXTextBookmark */;
 			C93EB3620F838904008DE709 = C93EB3620F838904008DE709 /* PBXTextBookmark */;
 			C93EB3630F838904008DE709 = C93EB3630F838904008DE709 /* PBXBookmark */;
@@ -386,9 +403,10 @@
 	};
 	C90264150F72EB38003F4C9F /* GetPID.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1219, 5502}}";
-			sepNavSelRange = "{11602, 73}";
-			sepNavVisRange = "{11357, 839}";
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 5558}}";
+			sepNavSelRange = "{20901, 88}";
+			sepNavVisRange = "{20360, 766}";
+			sepNavWindowFrame = "{{15, 46}, {1280, 727}}";
 		};
 	};
 	C90264160F72EB38003F4C9F /* GetPID.h */ = {
@@ -1658,6 +1676,195 @@
 		rLen = 0;
 		rLoc = 2147483647;
 	};
+	C92627440F8411CE0008BF64 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97160E60F81944400C0FC0D /* gpl-2.0.txt */;
+		name = "gpl-2.0.txt: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1567;
+		vrLoc = 0;
+	};
+	C92627450F8411CE0008BF64 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C9D45C970F72C51F0031DFFA /* Defaults.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			presets,
+			1,
+			arguments,
+		);
+		name = "/Users/flashit/Entwicklung/Mac-Dev/MediaNox/Defaults.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C92627460F8411CE0008BF64 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C944C5770F8151F6002E610C /* sparkle_public_key.pem */;
+		name = "sparkle_public_key.pem: 1";
+		rLen = 1178;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1178;
+		vrLoc = 0;
+	};
+	C92627470F8411CE0008BF64 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = "/Users/flashit/Entwicklung/Mac-Dev/MediaNox/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C92627480F8411CE0008BF64 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C9D45C970F72C51F0031DFFA /* Defaults.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			ffmpegBinary,
+		);
+		name = "/Users/flashit/Entwicklung/Mac-Dev/MediaNox/Defaults.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C92627490F8411CE0008BF64 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = "/Users/flashit/Entwicklung/Mac-Dev/MediaNox/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C926274A0F8411CE0008BF64 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C9D45C970F72C51F0031DFFA /* Defaults.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/flashit/Entwicklung/Mac-Dev/MediaNox/Defaults.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C926274B0F8411CE0008BF64 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97160E60F81944400C0FC0D /* gpl-2.0.txt */;
+		name = "gpl-2.0.txt: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1567;
+		vrLoc = 0;
+	};
+	C926274C0F8411CE0008BF64 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C9D45C970F72C51F0031DFFA /* Defaults.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			presets,
+			1,
+			arguments,
+		);
+		name = "/Users/flashit/Entwicklung/Mac-Dev/MediaNox/Defaults.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C926274D0F8411CE0008BF64 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C944C5770F8151F6002E610C /* sparkle_public_key.pem */;
+		name = "sparkle_public_key.pem: 1";
+		rLen = 1178;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1178;
+		vrLoc = 0;
+	};
+	C926274E0F8411CE0008BF64 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = "/Users/flashit/Entwicklung/Mac-Dev/MediaNox/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C92627500F8411E80008BF64 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = "/Users/flashit/Entwicklung/Mac-Dev/MediaNox/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C92627530F8412190008BF64 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C973B98A0F72B80D00DF2593 /* MediaNox.m */;
+		name = "MediaNox.m: 54";
+		rLen = 46;
+		rLoc = 1529;
+		rType = 0;
+		vrLen = 623;
+		vrLoc = 1289;
+	};
+	C92627540F8412190008BF64 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: pointer targets in passing argument 4 of 'GetAllPIDsForProcessName' differ in signedness";
+		fRef = C90264150F72EB38003F4C9F /* GetPID.c */;
+		rLen = 1;
+		rLoc = 391;
+		rType = 1;
+	};
+	C92627550F8412190008BF64 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C973B98A0F72B80D00DF2593 /* MediaNox.m */;
+		name = "MediaNox.m: 54";
+		rLen = 46;
+		rLoc = 1529;
+		rType = 0;
+		vrLen = 623;
+		vrLoc = 1289;
+	};
+	C92627560F8412190008BF64 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C90264150F72EB38003F4C9F /* GetPID.c */;
+		name = "GetPID.c: 392";
+		rLen = 88;
+		rLoc = 20901;
+		rType = 0;
+		vrLen = 766;
+		vrLoc = 20360;
+	};
+	C92627570F84121B0008BF64 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = "/Users/flashit/Entwicklung/Mac-Dev/MediaNox/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
 	C93EB3610F838904008DE709 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = C944C5770F8151F6002E610C /* sparkle_public_key.pem */;
@@ -1912,9 +2119,9 @@
 	};
 	C973B98A0F72B80D00DF2593 /* MediaNox.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1219, 17486}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 17472}}";
 			sepNavSelRange = "{1529, 46}";
-			sepNavVisRange = "{1289, 622}";
+			sepNavVisRange = "{1289, 623}";
 			sepNavWindowFrame = "{{15, 46}, {1280, 727}}";
 		};
 	};
