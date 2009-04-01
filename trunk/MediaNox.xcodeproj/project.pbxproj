@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD58160DA1D0A300B32029 /* MediaNox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MediaNox.xib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		C90264170F72EB38003F4C9F /* GetPID.c in Sources */ = {isa = PBXBuildFile; fileRef = C90264150F72EB38003F4C9F /* GetPID.c */; };
+		C902644B0F72F331003F4C9F /* mediaTypeImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C902644A0F72F331003F4C9F /* mediaTypeImageTransformer.m */; };
+		C90264520F72F759003F4C9F /* type_movie.png in Resources */ = {isa = PBXBuildFile; fileRef = C90264510F72F759003F4C9F /* type_movie.png */; };
+		C90BA6D20F7948F80059A9EE /* hideMoveMonitoredFolderTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C90BA6D10F7948F80059A9EE /* hideMoveMonitoredFolderTransformer.m */; };
+		C90FEB550F741348002ACF8A /* label_ShowQueueL.png in Resources */ = {isa = PBXBuildFile; fileRef = C90FEB530F741348002ACF8A /* label_ShowQueueL.png */; };
+		C90FEB560F741348002ACF8A /* label_HideQueueL.png in Resources */ = {isa = PBXBuildFile; fileRef = C90FEB540F741348002ACF8A /* label_HideQueueL.png */; };
+		C90FEBAB0F7414F6002ACF8A /* type_unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = C90FEBAA0F7414F6002ACF8A /* type_unknown.png */; };
+		C90FEC920F742650002ACF8A /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FEC910F742650002ACF8A /* DropView.m */; };
+		C90FECE60F7429E9002ACF8A /* DropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FECE50F7429E9002ACF8A /* DropImageView.m */; };
+		C90FED370F7434C2002ACF8A /* isOneTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FED360F7434C2002ACF8A /* isOneTransformer.m */; };
+		C90FED3E0F743686002ACF8A /* statusFontTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FED3D0F743686002ACF8A /* statusFontTransformer.m */; };
+		C90FED670F743749002ACF8A /* statusTextTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FED660F743749002ACF8A /* statusTextTransformer.m */; };
+		C90FEDB20F744491002ACF8A /* type_tvshow.png in Resources */ = {isa = PBXBuildFile; fileRef = C90FEDB10F744491002ACF8A /* type_tvshow.png */; };
+		C90FEE170F745815002ACF8A /* presetNameTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FEE160F745815002ACF8A /* presetNameTransformer.m */; };
+		C91802190F79980000A74471 /* selectedMoveMonitoredFolderTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C91802180F79980000A74471 /* selectedMoveMonitoredFolderTransformer.m */; };
+		C91802470F799E3400A74471 /* moveMonitoredSuccessFolderActive.m in Sources */ = {isa = PBXBuildFile; fileRef = C91802460F799E3400A74471 /* moveMonitoredSuccessFolderActive.m */; };
+		C91DF3CD0F7583FD006D2B0D /* iTunesImport.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C91DF3CA0F75823E006D2B0D /* iTunesImport.scpt */; };
+		C91DF4400F759E35006D2B0D /* isActiveTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C91DF43F0F759E35006D2B0D /* isActiveTransformer.m */; };
+		C91DF4880F75A11F006D2B0D /* showLogButtonTextTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C91DF4870F75A11F006D2B0D /* showLogButtonTextTransformer.m */; };
+		C91DF5270F75B225006D2B0D /* myTableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C91DF5260F75B225006D2B0D /* myTableButton.m */; };
+		C91DF6460F766C58006D2B0D /* myReQueueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C91DF6450F766C58006D2B0D /* myReQueueButton.m */; };
+		C91DF6D30F767DBB006D2B0D /* canReQueueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C91DF6D20F767DBB006D2B0D /* canReQueueTransformer.m */; };
+		C91DFACF0F768B33006D2B0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91DFACE0F768B33006D2B0D /* Cocoa.framework */; };
+		C944C5780F8151F6002E610C /* sparkle_public_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = C944C5770F8151F6002E610C /* sparkle_public_key.pem */; };
+		C95080800F81AA5F00605B39 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = C950807F0F81AA5F00605B39 /* appcast.xml */; };
+		C960013A0F7692ED00F662B6 /* RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96001390F7692ED00F662B6 /* RegexKit.framework */; };
+		C96001430F76934400F662B6 /* RegexKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C96001390F7692ED00F662B6 /* RegexKit.framework */; };
+		C97160E70F81944400C0FC0D /* gpl-2.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = C97160E60F81944400C0FC0D /* gpl-2.0.txt */; };
+		C971615A0F819DE700C0FC0D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97161590F819DE700C0FC0D /* Sparkle.framework */; };
+		C973B94D0F72934C00DF2593 /* icon_select.png in Resources */ = {isa = PBXBuildFile; fileRef = C973B94C0F72934C00DF2593 /* icon_select.png */; };
+		C973B9510F729B6500DF2593 /* MediaNox.icns in Resources */ = {isa = PBXBuildFile; fileRef = C973B9500F729B6500DF2593 /* MediaNox.icns */; };
+		C973B95E0F729CE900DF2593 /* icon_monitor.png in Resources */ = {isa = PBXBuildFile; fileRef = C973B95D0F729CE900DF2593 /* icon_monitor.png */; };
+		C973B9620F72A0BE00DF2593 /* icon_drop.png in Resources */ = {isa = PBXBuildFile; fileRef = C973B9610F72A0BE00DF2593 /* icon_drop.png */; };
+		C973B96C0F72B2A800DF2593 /* label_ShowPresets.png in Resources */ = {isa = PBXBuildFile; fileRef = C973B96B0F72B2A800DF2593 /* label_ShowPresets.png */; };
+		C973B9700F72B46900DF2593 /* label_ShowQueue.png in Resources */ = {isa = PBXBuildFile; fileRef = C973B96D0F72B46900DF2593 /* label_ShowQueue.png */; };
+		C973B9710F72B46900DF2593 /* label_HideQueue.png in Resources */ = {isa = PBXBuildFile; fileRef = C973B96E0F72B46900DF2593 /* label_HideQueue.png */; };
+		C973B9720F72B46900DF2593 /* label_HidePresets.png in Resources */ = {isa = PBXBuildFile; fileRef = C973B96F0F72B46900DF2593 /* label_HidePresets.png */; };
+		C973B98B0F72B80D00DF2593 /* MediaNox.m in Sources */ = {isa = PBXBuildFile; fileRef = C973B98A0F72B80D00DF2593 /* MediaNox.m */; };
+		C973B98E0F72B86200DF2593 /* queueButtonImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C973B98D0F72B86200DF2593 /* queueButtonImageTransformer.m */; };
+		C982CCA80F81A178001EDAC8 /* Sparkle.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C97161590F819DE700C0FC0D /* Sparkle.framework */; };
+		C98FAEA60F81B23700AA6C60 /* 133.html in Resources */ = {isa = PBXBuildFile; fileRef = C98FAEA50F81B23700AA6C60 /* 133.html */; };
+		C99FB5B30F81AEEE000E2A1D /* rnotes.css  in Resources */ = {isa = PBXBuildFile; fileRef = C99FB5B20F81AEEE000E2A1D /* rnotes.css  */; };
+		C9A5B8500F76D48600CD721F /* isTVShowTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5B84F0F76D48600CD721F /* isTVShowTransformer.m */; };
+		C9C124640F83CCB300884A91 /* ffmpeg_cvs18302 in Resources */ = {isa = PBXBuildFile; fileRef = C9C124630F83CCB300884A91 /* ffmpeg_cvs18302 */; };
+		C9C1246C0F83CD8700884A91 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = C9C1246B0F83CD8700884A91 /* ffmpeg */; };
+		C9C8EA4B0F8140BA000E154B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C9C8EA4A0F8140BA000E154B /* Credits.rtf */; };
+		C9CF16A90F81216D00ED3D71 /* ffpresets in Resources */ = {isa = PBXBuildFile; fileRef = C9CF16970F81216D00ED3D71 /* ffpresets */; };
+		C9D45B2D0F72BB3A0031DFFA /* queueButtonImageTransformer_left.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D45B2C0F72BB3A0031DFFA /* queueButtonImageTransformer_left.m */; };
+		C9D45C980F72C51F0031DFFA /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9D45C970F72C51F0031DFFA /* Defaults.plist */; };
+		C9D45CD30F72CDDA0031DFFA /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D45CD20F72CDDA0031DFFA /* RegexKitLite.m */; };
+		C9E825360F7782D1006DFFD4 /* isEditableTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E825350F7782D1006DFFD4 /* isEditableTransformer.m */; };
+		C9E825AB0F7791DC006DFFD4 /* isNoConversionActive.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E825AA0F7791DC006DFFD4 /* isNoConversionActive.m */; };
+		C9E825BC0F7792AB006DFFD4 /* isAConversionActive.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E825BB0F7792AB006DFFD4 /* isAConversionActive.m */; };
+		C9EDA30F0F83BFF8000F5CAE /* fflibraries in Resources */ = {isa = PBXBuildFile; fileRef = C9EDA30E0F83BFF8000F5CAE /* fflibraries */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C96001410F76930900F662B6 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C982CCA80F81A178001EDAC8 /* Sparkle.framework in Copy Files */,
+				C96001430F76934400F662B6 /* RegexKit.framework in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MediaNox.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* MediaNox_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaNox_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* MediaNox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaNox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90264150F72EB38003F4C9F /* GetPID.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GetPID.c; sourceTree = "<group>"; };
+		C90264160F72EB38003F4C9F /* GetPID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPID.h; sourceTree = "<group>"; };
+		C90264490F72F331003F4C9F /* mediaTypeImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mediaTypeImageTransformer.h; sourceTree = "<group>"; };
+		C902644A0F72F331003F4C9F /* mediaTypeImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mediaTypeImageTransformer.m; sourceTree = "<group>"; };
+		C90264510F72F759003F4C9F /* type_movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_movie.png; sourceTree = "<group>"; };
+		C90BA6D00F7948F80059A9EE /* hideMoveMonitoredFolderTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hideMoveMonitoredFolderTransformer.h; sourceTree = "<group>"; };
+		C90BA6D10F7948F80059A9EE /* hideMoveMonitoredFolderTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hideMoveMonitoredFolderTransformer.m; sourceTree = "<group>"; };
+		C90FEB530F741348002ACF8A /* label_ShowQueueL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = label_ShowQueueL.png; sourceTree = "<group>"; };
+		C90FEB540F741348002ACF8A /* label_HideQueueL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = label_HideQueueL.png; sourceTree = "<group>"; };
+		C90FEBAA0F7414F6002ACF8A /* type_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_unknown.png; sourceTree = "<group>"; };
+		C90FEC900F742650002ACF8A /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
+		C90FEC910F742650002ACF8A /* DropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropView.m; sourceTree = "<group>"; };
+		C90FECE40F7429E9002ACF8A /* DropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropImageView.h; sourceTree = "<group>"; };
+		C90FECE50F7429E9002ACF8A /* DropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropImageView.m; sourceTree = "<group>"; };
+		C90FED350F7434C2002ACF8A /* isOneTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = isOneTransformer.h; sourceTree = "<group>"; };
+		C90FED360F7434C2002ACF8A /* isOneTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = isOneTransformer.m; sourceTree = "<group>"; };
+		C90FED3C0F743686002ACF8A /* statusFontTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = statusFontTransformer.h; sourceTree = "<group>"; };
+		C90FED3D0F743686002ACF8A /* statusFontTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = statusFontTransformer.m; sourceTree = "<group>"; };
+		C90FED650F743749002ACF8A /* statusTextTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = statusTextTransformer.h; sourceTree = "<group>"; };
+		C90FED660F743749002ACF8A /* statusTextTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = statusTextTransformer.m; sourceTree = "<group>"; };
+		C90FEDB10F744491002ACF8A /* type_tvshow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_tvshow.png; sourceTree = "<group>"; };
+		C90FEE150F745815002ACF8A /* presetNameTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = presetNameTransformer.h; sourceTree = "<group>"; };
+		C90FEE160F745815002ACF8A /* presetNameTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = presetNameTransformer.m; sourceTree = "<group>"; };
+		C91802170F79980000A74471 /* selectedMoveMonitoredFolderTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectedMoveMonitoredFolderTransformer.h; sourceTree = "<group>"; };
+		C91802180F79980000A74471 /* selectedMoveMonitoredFolderTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectedMoveMonitoredFolderTransformer.m; sourceTree = "<group>"; };
+		C91802450F799E3400A74471 /* moveMonitoredSuccessFolderActive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = moveMonitoredSuccessFolderActive.h; sourceTree = "<group>"; };
+		C91802460F799E3400A74471 /* moveMonitoredSuccessFolderActive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = moveMonitoredSuccessFolderActive.m; sourceTree = "<group>"; };
+		C91DF3CA0F75823E006D2B0D /* iTunesImport.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; path = iTunesImport.scpt; sourceTree = "<group>"; };
+		C91DF43E0F759E35006D2B0D /* isActiveTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = isActiveTransformer.h; sourceTree = "<group>"; };
+		C91DF43F0F759E35006D2B0D /* isActiveTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = isActiveTransformer.m; sourceTree = "<group>"; };
+		C91DF4860F75A11F006D2B0D /* showLogButtonTextTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showLogButtonTextTransformer.h; sourceTree = "<group>"; };
+		C91DF4870F75A11F006D2B0D /* showLogButtonTextTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showLogButtonTextTransformer.m; sourceTree = "<group>"; };
+		C91DF5250F75B225006D2B0D /* myTableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myTableButton.h; sourceTree = "<group>"; };
+		C91DF5260F75B225006D2B0D /* myTableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myTableButton.m; sourceTree = "<group>"; };
+		C91DF6440F766C58006D2B0D /* myReQueueButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myReQueueButton.h; sourceTree = "<group>"; };
+		C91DF6450F766C58006D2B0D /* myReQueueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myReQueueButton.m; sourceTree = "<group>"; };
+		C91DF6D10F767DBB006D2B0D /* canReQueueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = canReQueueTransformer.h; sourceTree = "<group>"; };
+		C91DF6D20F767DBB006D2B0D /* canReQueueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = canReQueueTransformer.m; sourceTree = "<group>"; };
+		C91DFACE0F768B33006D2B0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C944C5770F8151F6002E610C /* sparkle_public_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sparkle_public_key.pem; sourceTree = "<group>"; };
+		C950807F0F81AA5F00605B39 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
+		C96001390F7692ED00F662B6 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = Local/Frameworks/RegexKit.framework; sourceTree = DEVELOPER_DIR; };
+		C97160E60F81944400C0FC0D /* gpl-2.0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "gpl-2.0.txt"; sourceTree = "<group>"; };
+		C97161590F819DE700C0FC0D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		C973B94C0F72934C00DF2593 /* icon_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_select.png; sourceTree = "<group>"; };
+		C973B9500F729B6500DF2593 /* MediaNox.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MediaNox.icns; sourceTree = "<group>"; };
+		C973B95D0F729CE900DF2593 /* icon_monitor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_monitor.png; sourceTree = "<group>"; };
+		C973B9610F72A0BE00DF2593 /* icon_drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_drop.png; sourceTree = "<group>"; };
+		C973B96B0F72B2A800DF2593 /* label_ShowPresets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = label_ShowPresets.png; sourceTree = "<group>"; };
+		C973B96D0F72B46900DF2593 /* label_ShowQueue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = label_ShowQueue.png; sourceTree = "<group>"; };
+		C973B96E0F72B46900DF2593 /* label_HideQueue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = label_HideQueue.png; sourceTree = "<group>"; };
+		C973B96F0F72B46900DF2593 /* label_HidePresets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = label_HidePresets.png; sourceTree = "<group>"; };
+		C973B9890F72B80D00DF2593 /* MediaNox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaNox.h; sourceTree = "<group>"; };
+		C973B98A0F72B80D00DF2593 /* MediaNox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaNox.m; sourceTree = "<group>"; };
+		C973B98C0F72B86200DF2593 /* queueButtonImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = queueButtonImageTransformer.h; sourceTree = "<group>"; };
+		C973B98D0F72B86200DF2593 /* queueButtonImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = queueButtonImageTransformer.m; sourceTree = "<group>"; };
+		C98FAEA50F81B23700AA6C60 /* 133.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 133.html; sourceTree = "<group>"; };
+		C99FB5B20F81AEEE000E2A1D /* rnotes.css  */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rnotes.css "; sourceTree = "<group>"; };
+		C9A5B84E0F76D48600CD721F /* isTVShowTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = isTVShowTransformer.h; sourceTree = "<group>"; };
+		C9A5B84F0F76D48600CD721F /* isTVShowTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = isTVShowTransformer.m; sourceTree = "<group>"; };
+		C9C124630F83CCB300884A91 /* ffmpeg_cvs18302 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg_cvs18302; sourceTree = "<group>"; };
+		C9C1246B0F83CD8700884A91 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
+		C9C8EA4A0F8140BA000E154B /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		C9CF16970F81216D00ED3D71 /* ffpresets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ffpresets; sourceTree = "<group>"; };
+		C9D45B2B0F72BB3A0031DFFA /* queueButtonImageTransformer_left.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = queueButtonImageTransformer_left.h; sourceTree = "<group>"; };
+		C9D45B2C0F72BB3A0031DFFA /* queueButtonImageTransformer_left.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = queueButtonImageTransformer_left.m; sourceTree = "<group>"; };
+		C9D45C970F72C51F0031DFFA /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		C9D45CD10F72CDDA0031DFFA /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		C9D45CD20F72CDDA0031DFFA /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		C9E825340F7782D1006DFFD4 /* isEditableTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = isEditableTransformer.h; sourceTree = "<group>"; };
+		C9E825350F7782D1006DFFD4 /* isEditableTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = isEditableTransformer.m; sourceTree = "<group>"; };
+		C9E825A90F7791DC006DFFD4 /* isNoConversionActive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = isNoConversionActive.h; sourceTree = "<group>"; };
+		C9E825AA0F7791DC006DFFD4 /* isNoConversionActive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = isNoConversionActive.m; sourceTree = "<group>"; };
+		C9E825BA0F7792AB006DFFD4 /* isAConversionActive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = isAConversionActive.h; sourceTree = "<group>"; };
+		C9E825BB0F7792AB006DFFD4 /* isAConversionActive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = isAConversionActive.m; sourceTree = "<group>"; };
+		C9EDA30E0F83BFF8000F5CAE /* fflibraries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fflibraries; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C91DFACF0F768B33006D2B0D /* Cocoa.framework in Frameworks */,
+				C960013A0F7692ED00F662B6 /* RegexKit.framework in Frameworks */,
+				C971615A0F819DE700C0FC0D /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C90264480F72F30D003F4C9F /* BindingTransformer */,
+				1DDD58140DA1D0A300B32029 /* MediaNox.xib */,
+				C973B9890F72B80D00DF2593 /* MediaNox.h */,
+				C973B98A0F72B80D00DF2593 /* MediaNox.m */,
+				C90FEC900F742650002ACF8A /* DropView.h */,
+				C90FEC910F742650002ACF8A /* DropView.m */,
+				C90FECE40F7429E9002ACF8A /* DropImageView.h */,
+				C90FECE50F7429E9002ACF8A /* DropImageView.m */,
+				C91DF5250F75B225006D2B0D /* myTableButton.h */,
+				C91DF5260F75B225006D2B0D /* myTableButton.m */,
+				C91DF6440F766C58006D2B0D /* myReQueueButton.h */,
+				C91DF6450F766C58006D2B0D /* myReQueueButton.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C97161590F819DE700C0FC0D /* Sparkle.framework */,
+				C96001390F7692ED00F662B6 /* RegexKit.framework */,
+				C91DFACE0F768B33006D2B0D /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* MediaNox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* MediaNox */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = MediaNox;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C9D45CD00F72CDDA0031DFFA /* RegexKitLite */,
+				C90264150F72EB38003F4C9F /* GetPID.c */,
+				C90264160F72EB38003F4C9F /* GetPID.h */,
+				32CA4F630368D1EE00C91783 /* MediaNox_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				C91DF3CA0F75823E006D2B0D /* iTunesImport.scpt */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9C1245D0F83CAF100884A91 /* ffbins */,
+				C9CF16970F81216D00ED3D71 /* ffpresets */,
+				C9EDA30E0F83BFF8000F5CAE /* fflibraries */,
+				C95080760F81AA4900605B39 /* SparkleUpdater */,
+				C9D45CD50F72CDED0031DFFA /* Images */,
+				C973B9500F729B6500DF2593 /* MediaNox.icns */,
+				C944C5770F8151F6002E610C /* sparkle_public_key.pem */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				C9D45C970F72C51F0031DFFA /* Defaults.plist */,
+				C97160E60F81944400C0FC0D /* gpl-2.0.txt */,
+				C9C8EA4A0F8140BA000E154B /* Credits.rtf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C90264480F72F30D003F4C9F /* BindingTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				C9D45B2B0F72BB3A0031DFFA /* queueButtonImageTransformer_left.h */,
+				C9D45B2C0F72BB3A0031DFFA /* queueButtonImageTransformer_left.m */,
+				C973B98C0F72B86200DF2593 /* queueButtonImageTransformer.h */,
+				C973B98D0F72B86200DF2593 /* queueButtonImageTransformer.m */,
+				C90264490F72F331003F4C9F /* mediaTypeImageTransformer.h */,
+				C902644A0F72F331003F4C9F /* mediaTypeImageTransformer.m */,
+				C90FED350F7434C2002ACF8A /* isOneTransformer.h */,
+				C90FED360F7434C2002ACF8A /* isOneTransformer.m */,
+				C91DF43E0F759E35006D2B0D /* isActiveTransformer.h */,
+				C91DF43F0F759E35006D2B0D /* isActiveTransformer.m */,
+				C90FED3C0F743686002ACF8A /* statusFontTransformer.h */,
+				C90FED3D0F743686002ACF8A /* statusFontTransformer.m */,
+				C90FED650F743749002ACF8A /* statusTextTransformer.h */,
+				C90FED660F743749002ACF8A /* statusTextTransformer.m */,
+				C90FEE150F745815002ACF8A /* presetNameTransformer.h */,
+				C90FEE160F745815002ACF8A /* presetNameTransformer.m */,
+				C91DF4860F75A11F006D2B0D /* showLogButtonTextTransformer.h */,
+				C91DF4870F75A11F006D2B0D /* showLogButtonTextTransformer.m */,
+				C91DF6D10F767DBB006D2B0D /* canReQueueTransformer.h */,
+				C91DF6D20F767DBB006D2B0D /* canReQueueTransformer.m */,
+				C9A5B84E0F76D48600CD721F /* isTVShowTransformer.h */,
+				C9A5B84F0F76D48600CD721F /* isTVShowTransformer.m */,
+				C9E825340F7782D1006DFFD4 /* isEditableTransformer.h */,
+				C9E825350F7782D1006DFFD4 /* isEditableTransformer.m */,
+				C9E825A90F7791DC006DFFD4 /* isNoConversionActive.h */,
+				C9E825AA0F7791DC006DFFD4 /* isNoConversionActive.m */,
+				C9E825BA0F7792AB006DFFD4 /* isAConversionActive.h */,
+				C9E825BB0F7792AB006DFFD4 /* isAConversionActive.m */,
+				C90BA6D00F7948F80059A9EE /* hideMoveMonitoredFolderTransformer.h */,
+				C90BA6D10F7948F80059A9EE /* hideMoveMonitoredFolderTransformer.m */,
+				C91802170F79980000A74471 /* selectedMoveMonitoredFolderTransformer.h */,
+				C91802180F79980000A74471 /* selectedMoveMonitoredFolderTransformer.m */,
+				C91802450F799E3400A74471 /* moveMonitoredSuccessFolderActive.h */,
+				C91802460F799E3400A74471 /* moveMonitoredSuccessFolderActive.m */,
+			);
+			name = BindingTransformer;
+			sourceTree = "<group>";
+		};
+		C95080760F81AA4900605B39 /* SparkleUpdater */ = {
+			isa = PBXGroup;
+			children = (
+				C99FB5B20F81AEEE000E2A1D /* rnotes.css  */,
+				C98FAEA50F81B23700AA6C60 /* 133.html */,
+				C950807F0F81AA5F00605B39 /* appcast.xml */,
+			);
+			name = SparkleUpdater;
+			sourceTree = "<group>";
+		};
+		C9C1245D0F83CAF100884A91 /* ffbins */ = {
+			isa = PBXGroup;
+			children = (
+				C9C1246B0F83CD8700884A91 /* ffmpeg */,
+				C9C124630F83CCB300884A91 /* ffmpeg_cvs18302 */,
+			);
+			name = ffbins;
+			sourceTree = "<group>";
+		};
+		C9D45CD00F72CDDA0031DFFA /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				C9D45CD10F72CDDA0031DFFA /* RegexKitLite.h */,
+				C9D45CD20F72CDDA0031DFFA /* RegexKitLite.m */,
+			);
+			name = RegexKitLite;
+			sourceTree = "<group>";
+		};
+		C9D45CD50F72CDED0031DFFA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C90FEB530F741348002ACF8A /* label_ShowQueueL.png */,
+				C90FEB540F741348002ACF8A /* label_HideQueueL.png */,
+				C973B96D0F72B46900DF2593 /* label_ShowQueue.png */,
+				C973B96E0F72B46900DF2593 /* label_HideQueue.png */,
+				C973B96F0F72B46900DF2593 /* label_HidePresets.png */,
+				C973B96B0F72B2A800DF2593 /* label_ShowPresets.png */,
+				C90264510F72F759003F4C9F /* type_movie.png */,
+				C90FEBAA0F7414F6002ACF8A /* type_unknown.png */,
+				C90FEDB10F744491002ACF8A /* type_tvshow.png */,
+				C973B9610F72A0BE00DF2593 /* icon_drop.png */,
+				C973B95D0F729CE900DF2593 /* icon_monitor.png */,
+				C973B94C0F72934C00DF2593 /* icon_select.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* MediaNox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MediaNox" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				C91DF8760F7685BA006D2B0D /* ShellScript */,
+				C96001410F76930900F662B6 /* Copy Files */,
+				C944C5980F81577A002E610C /* Automate Appcast Build */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MediaNox;
+			productInstallPath = "$(HOME)/Applications";
+			productName = MediaNox;
+			productReference = 8D1107320486CEB800E47090 /* MediaNox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MediaNox" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* MediaNox */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* MediaNox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C91DF3CD0F7583FD006D2B0D /* iTunesImport.scpt in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MediaNox.xib in Resources */,
+				C973B94D0F72934C00DF2593 /* icon_select.png in Resources */,
+				C973B9510F729B6500DF2593 /* MediaNox.icns in Resources */,
+				C973B95E0F729CE900DF2593 /* icon_monitor.png in Resources */,
+				C973B9620F72A0BE00DF2593 /* icon_drop.png in Resources */,
+				C973B96C0F72B2A800DF2593 /* label_ShowPresets.png in Resources */,
+				C973B9700F72B46900DF2593 /* label_ShowQueue.png in Resources */,
+				C973B9710F72B46900DF2593 /* label_HideQueue.png in Resources */,
+				C973B9720F72B46900DF2593 /* label_HidePresets.png in Resources */,
+				C9D45C980F72C51F0031DFFA /* Defaults.plist in Resources */,
+				C90264520F72F759003F4C9F /* type_movie.png in Resources */,
+				C90FEB550F741348002ACF8A /* label_ShowQueueL.png in Resources */,
+				C90FEB560F741348002ACF8A /* label_HideQueueL.png in Resources */,
+				C90FEBAB0F7414F6002ACF8A /* type_unknown.png in Resources */,
+				C90FEDB20F744491002ACF8A /* type_tvshow.png in Resources */,
+				C9CF16A90F81216D00ED3D71 /* ffpresets in Resources */,
+				C9C8EA4B0F8140BA000E154B /* Credits.rtf in Resources */,
+				C944C5780F8151F6002E610C /* sparkle_public_key.pem in Resources */,
+				C97160E70F81944400C0FC0D /* gpl-2.0.txt in Resources */,
+				C95080800F81AA5F00605B39 /* appcast.xml in Resources */,
+				C99FB5B30F81AEEE000E2A1D /* rnotes.css  in Resources */,
+				C98FAEA60F81B23700AA6C60 /* 133.html in Resources */,
+				C9EDA30F0F83BFF8000F5CAE /* fflibraries in Resources */,
+				C9C124640F83CCB300884A91 /* ffmpeg_cvs18302 in Resources */,
+				C9C1246C0F83CD8700884A91 /* ffmpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C91DF8760F7685BA006D2B0D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		C944C5980F81577A002E610C /* Automate Appcast Build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Automate Appcast Build";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /usr/bin/ruby;
+			shellScript = "#!/usr/bin/env ruby -w\n\n#################################################################################\n#                                                                               #\n#     appcast_automation.rb                                                     #\n#                                                                               #\n#     author:   Craig Williams                                                  #\n#     created:  2009-01-09                                                      #\n#                                                                               #\n#################################################################################\n#                                                                               #\n#     This program is free software: you can redistribute it and/or modify      #\n#     it under the terms of the GNU General Public License as published by      #\n#     the Free Software Foundation, either version 3 of the License, or         #\n#     (at your option) any later version.                                       #\n#                                                                               #\n#     This program is distributed in the hope that it will be useful,           #\n#     but WITHOUT ANY WARRANTY; without even the implied warranty of            #\n#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             #\n#     GNU General Public License for more details.                              #\n#                                                                               #\n#     You should have received a copy of the GNU General Public License         #\n#     along with this program.  If not, see <http://www.gnu.org/licenses/>.     #\n#                                                                               #\n#################################################################################\n\n=begin\n  INTRO:\n    In his article, Marc uses a bash script to automate the process of signing your \n    Sparkle enabled app and explains how to put your private and public keys in your \n    keychain. I wrote a Ruby version that extends this functionality to \n    include a few more options‚Ä¶\n\n    IMPORTANT: You will need to read Marc's article first before moving forward. \n\n    Here is a quick list of added features:\n    \n    \t1. config.yaml file for configuration information\n    \t2. build_now option - when set to 'NO' will not run during Release style build\n    \t3. Creates project release folder if it does not exist\n    \t4. Creates sub-folders based on version number\n    \t5. Creates css file\n    \t6. Creates xml file containing the '<item>' info generated by the script\n    \t7. Creates an html template file\n    \t8. Copies the newly created archive to the project folder\n    \n\n    The project release folder is not the 'Release' folder Xcode creates. \n    This is a folder that contains this and future Sparkle release builds. \n    See 'appcast_basefolder' below.\n     \n    INSTRUCTIONS:    \n    \n    Config YAML file\n    A YAML file is easily editable and is a good place for us to set up our \n    configuration information. It also enables us not to have to change the \n    script once we have it the way we want it. \n\n    Create a 'config.yaml' file and place it in your projects 'Release' folder\n    and include the following making the necessary changes.\n    ---\n    build_now:              'YES'\n    download_base_url:      'http://www.your_website.com/app_folder/'\n    appcast_basefolder:     '/users/user_name/desktop/app_name/'\n    appcast_xml_name:       'appcast.xml'\n    keychain_privkey_name:  'Sparkle Private Key'\n    css_file_name:          'rnotes.css'\n\n    IMPORTANT: If you change the variable names here you also \n    need to change them in the script.\n    \n    VARIABLE EXPLANATION\n\n    build_now: \n      Will only include this script in the build process if this is set to 'YES'\n      The script automatically checks that the build style is 'Release'\n\n    download_base_url:      \n      Your website url where you will place your updated project\n\n    appcast_basefolder:   \n      The base file is created for you and a project folder inside that with\n      the name of your project and version number. \n    \teg  - ProjectName \n      \t\t  - ProjectName 1.0\n    \t\t\t    - appcast.xml (contains the '<item>' info)\n    \t\t\t    - 1.0.html\n    \t\t\t    - rnotes.css\n      \t\t\t  - ProjectName 1.0.zip\n      \t\t  - ProjectName 1.1\n      \t\t\t  - appcast.xml (contains the '<item>' info)\n      \t\t\t  - 1.1.html\n      \t\t\t  - rnotes.css\n      \t\t\t  - ProjectName 1.1.zip\n    \n    \n    The following files are created for you if they do not already exist.\n        appcast_xml_name:\n        css_file_name:\n        version_number.html\n\n    Your archived project file is also copied to the project folder\n        AppName 1.1.zip\n\n    appcast_xml_name:\n      This file holds the results of the script. What is between the '' tags that\n      you will copy into your complete appcast.xml file.\n      Name to your liking.\n\n    keychain_privkey_name:\n      You should understand this after reading Marc's article.\n      Name to your liking.\n\n    css_file_name:\n    This name will be used to create your css file and the link in the xml file. \n    If you change this after these are created make sure also change the xml file \n    or if you created the css file first use that name here.\n\n      The css is at the bottom of the script and is in 'flat' form. One liners.\n      When written to file it is expanded to standard format for easy editing.\n\n    Once your config.yaml file is created and placed in your projects 'Release' folder, \n    add this script as a 'Run Script' build phase. Set the bash to /usr/bin/ruby \n    and you are finished!\n\n    If you have questions, ideas or bug reports please post them at:\n    http://allancraig.net/blog/?p=65\n      \n=end\n\nclass AppCast\n  require 'yaml'\n  require 'tmpdir'\n  require 'fileutils'\n  \n  MESSAGE_HEADER    = 'RUN SCRIPT DURING BUILD MESSAGE'\n  \n  def initialize\n    @signature = ''\n    require_release_build\n    instantiate_project_variables\n    load_config_file\n    \n    # the build_now setting in the config.yaml file\n    # determines whether you want to perform this script\n    # set to 'NO' until you are ready to publish\n    exit_if_build_not_set_to_yes\n    instantiate_appcast_variables\n  end\n  \n  def main_worker_bee\n    create_appcast_folder_and_files\n    remove_old_zip_create_new_zip\n    file_stats\n    create_key\n    create_appcast_xml\n    copy_archive_to_appcast_path\n  end\n  \n  # Only works for Release builds\n  # Exits upon failure\n  def require_release_build\n      if ENV[\"BUILD_STYLE\"] == 'Debug'\n        log_message(\"Distribution target requires 'Release' build style\")\n        exit\n      end\n  end\n  \n  # Exits if no config.yaml file found.\n  def load_config_file\n    config_file_path = \"#{@proj_dir}/config.yaml\"\n    if !File.exists?(config_file_path)\n      log_message(\"No 'config.yaml' file found in project directory.\")\n      exit\n    end\n    @config = YAML.load_file(config_file_path)\n  end\n  \n  def exit_if_build_not_set_to_yes\n      if @config['build_now'] != 'YES'\n        log_message(\"The 'build_now' setting in 'config.yaml' set to 'NO'\\nIf you are wanting to include this script in\\nthe build process change this setting to 'YES'\")\n        exit\n      end\n  end\n\n  def instantiate_project_variables\n    @proj_dir               = ENV['BUILT_PRODUCTS_DIR']\n    @proj_name              = ENV['PROJECT_NAME']\n    @version                = `defaults read \"#{@proj_dir}/#{@proj_name}.app/Contents/Info\" CFBundleVersion`\n    @versionShort           = `defaults read \"#{@proj_dir}/#{@proj_name}.app/Contents/Info\" CFBundleShortVersionString`\n    @archive_filename       = \"#{@proj_name} v#{@versionShort.chomp} #{@version.chomp}.zip\"\n    @archive_path           = \"#{@proj_dir}/#{@archive_filename}\"\n  end\n\n  def instantiate_appcast_variables\n    @appcast_xml_name       = @config['appcast_xml_name'].chomp\n    @appcast_basefolder     = @config['appcast_basefolder'].chomp\n    @appcast_proj_folder    = \"#{@config['appcast_basefolder']}/#{@proj_name}_#{@version}\".chomp\n    @appcast_xml_path       = \"#{@appcast_proj_folder}/#{@appcast_xml_name}\"\n    @download_base_url      = @config['download_base_url']\n    @keychain_privkey_name  = @config['keychain_privkey_name']\n    @css_file_name          = @config['css_file_name']\n    @releasenotes_url       = \"http://medianox.googlecode.com/svn/trunk/#{@version.chomp}.html\"\n    @download_url           = \"#{@download_base_url}#{@archive_filename}\"\n  end\n\n  def remove_old_zip_create_new_zip\n    Dir.chdir(@proj_dir)\n    `rm -f #{@proj_name}*.zip`\n    `zip -qr \"#{@archive_filename}\" \"#{@proj_name}.app\"`\n  end\n  \n  def copy_archive_to_appcast_path\n    begin\n      FileUtils.cp(@archive_path, @appcast_proj_folder)\n    rescue\n      log_message(\"There was an error copying the zip file to appcast folder\\nError: #{$!}\")\n    end\n  end\n  \n  def file_stats\n    @size     = File.size(@archive_filename)\n    @pubdate  = `date +\"%a, %d %b %G %T %z\"`\n  end\n  \n  def create_key\n    priv_key_path = \"#{Dir.tmpdir}/priv_key.pem\"\n    \n    key = `security find-generic-password -g -s \"#{@keychain_privkey_name}\" 2>&1 1>/dev/null | perl -pe '($_) = /\"(.+)\"/'`\n    \n    if key == ''\n      log_message(\"Unable to load signing private key with name '#{@keychain_privkey_name}' from keychain\\nFor file #{@archive_filename}\")\n      exit\n    end\n\n    File.open(priv_key_path, 'w') { |f| f.puts key.split(\"\\\\012\") }    \n    \n    @signature = `openssl dgst -sha1 -binary < '#{@archive_path}' \\\n                   | openssl dgst -dss1 -sign '#{priv_key_path}' \\\n                   | openssl enc -base64`\n\n    `rm -fP #{priv_key_path}`\n\n    log_message(@signature)\n\n    if @signature == ''\n      log_message(\"Unable to sign file #{@archive_filename}\")\n      exit\n    end\n  end\n  \n  def create_appcast_xml\n    appcast_xml = \n\"<item>\n\t<title>Version #{@versionShort.chomp} (#{@version.chomp})</title>\n\t  <sparkle:releaseNotesLink>\n\t    #{@releasenotes_url.chomp}\n\t  </sparkle:releaseNotesLink>\n\t<pubDate>#{@pubdate.chomp}</pubDate>\n\t<enclosure\n\t\turl=\\\"#{@download_url.chomp}\\\"\n\t\tsparkle:version=\\\"#{@version.chomp}\\\"\n\t\tsparkle:shortVersionString=\\\"#{@versionShort.chomp}\\\"\n\t\ttype=\\\"application/octet-stream\\\"\n\t\tlength=\\\"#{@size}\\\"\n\t\tsparkle:dsaSignature=\\\"#{@signature.chomp}\\\"\n\t/>\n</item>\"\n\n    File.open(@appcast_xml_path, 'w') { |f| f.puts appcast_xml }\n  end\n  \n  # Creates the appcast folder if it does not exist\n  # or is accidently moved or deleted\n  # Creates an html file with generic note template if it does not exist\n  # This way the notes file is named correctly as well\n  # Creates a css file named from yaml file with default css\n  def create_appcast_folder_and_files\n    base_folder = @appcast_basefolder\n    project_folder = @appcast_proj_folder\n    \n    notes_file = \"#{project_folder}/#{File.basename(@releasenotes_url.chomp)}\"\n    css_file_path = \"#{project_folder}/#{@css_file_name}\"\n    \n    Dir.mkdir(base_folder)    if !File.exists?(base_folder)\n    Dir.mkdir(project_folder) if !File.exists?(project_folder)\n    \n    File.open(notes_file, 'w') { |f| f.puts release_notes_generic_text } if !File.exists?(notes_file)\n    File.open(css_file_path, 'w') { |f| f.puts decompressed_css } if !File.exists?(css_file_path)\n  end\n  \n  def log_message(msg)\n    puts \"\\n\\n----------------------------------------------\"\n    puts MESSAGE_HEADER\n    puts msg\n    puts \"----------------------------------------------\\n\\n\"\n  end\n  \n  def decompressed_css\n    return css_text.gsub(/\\{\\s+/, \"{\\n\\t\").gsub(/;/, \";\\n\\t\").gsub(/^\\s+\\}/, \"}\").gsub(/^\\s+/, \"\\t\")\n  end\n  \n  def release_notes_generic_text\n    return \"<html>\n\n    \t<head>\n    \t\t<meta http-equiv=\\\"content-type\\\" content=\\\"text/html;charset=utf-8\\\">\n    \t\t<title>What's new in #{@proj_name}?</title>\n    \t\t<meta name=\\\"robots\\\" content=\\\"anchors\\\">\n    \t\t<link href=\\\"rnotes.css\\\" type=\\\"text/css\\\" rel=\\\"stylesheet\\\" media=\\\"all\\\">\n    \t</head>\n\n    \t<body>\n    \t\t<br />\n    \t\t\t<table class=\\\"dots\\\" width=\\\"100%\\\" border=\\\"0\\\" cellspacing=\\\"0\\\" cellpadding=\\\"0\\\" summary=\\\"Two column table with heading\\\">\n    \t\t\t\t<tr>\n    \t\t\t\t\t<td class=\\\"blue\\\" colspan=\\\"2\\\">\n    \t\t\t\t\t\t<h3>TITLE</h3>\n    \t\t\t\t\t</td>\n    \t\t\t\t</tr>\n    \t\t\t\t<tr>\n    \t\t\t\t\t<td valign=\\\"top\\\" width=\\\"150\\\"><img src=\\\"IMAGE_NAME.png\\\" alt=\\\"ALT_TITLE\\\"  width=\\\"150\\\" border=\\\"0\\\"></td>\n    \t\t\t\t\t<td valign=\\\"top\\\">\n    \t\t\t\t\t\t<p>DESCRIPTION</p>\n    \t\t\t\t\t</td>\n    \t\t\t\t</tr>\n    \t\t\t</table>\n    \t\t\t<br>\n    \t\t\t<table class=\\\"dots\\\" width=\\\"100%\\\" border=\\\"0\\\" cellspacing=\\\"0\\\" cellpadding=\\\"0\\\" summary=\\\"Two column table with heading\\\">\n    \t\t\t\t<tr>\n    \t\t\t\t\t<td class=\\\"blue\\\" colspan=\\\"2\\\">\n    \t\t\t\t\t\t<h3>TITLE</h3>\n    \t\t\t\t\t</td>\n    \t\t\t\t</tr>\n    \t\t\t\t<tr>\n    \t\t\t\t\t<td valign=\\\"top\\\" width=\\\"150\\\"><img src=\\\"IMAGE_NAME.png\\\" alt=\\\"ALT_TITLE\\\"  width=\\\"150\\\" border=\\\"0\\\"></td>\n    \t\t\t\t\t<td valign=\\\"top\\\">\n    \t\t\t\t\t\t<p>DESCRIPTION</p>\n    \t\t\t\t\t</td>\n    \t\t\t\t</tr>\n    \t\t\t</table>\n    \t\t\t<br>\n    \t</body>\n\n    </html>\"    \n  end\n  \n  # This css will be expanded to a normal, easily editable form when written to file\n  def css_text\n    return \"body { margin: 2px 12px 12px; }\nh1 h2 h3 p ol ul a a:hover { font-family: \\\"Lucida Grande\\\", Arial, sans-serif; }\nh1 { font-size: 11pt; margin-bottom: 0; }\nh2 { font-size: 9pt; margin-top: 0; margin-bottom: -10px; }\nh3 { font-size: 9pt; font-weight: bold; margin-top: -4px; margin-bottom: -4px; }\np { font-size: 9pt; line-height: 12pt; text-decoration: none; }\nol { font-size: 9pt; line-height: 12pt; list-style-position: outside; margin-top: 12px; margin-bottom: 12px; margin-left: -18px; padding-left: 40px; }\nol li { margin-top: 6px; margin-bottom: 6px; }\nol p { margin-top: 6px; margin-bottom: 6px; }\nul { font-size: 9pt; line-height: 12pt; list-style-type: square; list-style-position: outside; margin-top: 12px; margin-bottom: 12px; margin-left: -24px; padding-left: 40px; }\nul li { margin-top: 6px; margin-bottom: 6px; }\nul p { margin-top: 6px; margin-bottom: 6px; }\na { color: #00f; font-size: 9pt; line-height: 12pt; text-decoration: none; }\na:hover { color: #00f; text-decoration: underline; }\nhr { text-decoration: none; border: solid 1px #bfbfbf; }\ntd { padding: 6px; }\n#banner { background-color: #f2f2f2; background-repeat: no-repeat; padding: -2px 6px 0; position: fixed; top: 0; left: 0; width: 100%; height: 1.2em; float: left; border: solid 1px #bfbfbf; }\n#caticon { margin-top: 3px; margin-bottom: -3px; margin-right: 5px; float: left; }\n#pagetitle { margin-top: 12px; margin-bottom: 0px; margin-left: 40px; width: 88%; border: solid 1px #fff; }\n#mainbox { margin-top: 2349px; padding-right: 6px; }\n#taskbox { background-color: #e6edff; list-style-type: decimal; list-style-position: outside; margin: 12px 0; padding: 2px 12px; border: solid 1px #bfbfbf; }\n#taskbox h2 { margin-top: 8; margin-bottom: -4px; }\n#machelp { position: absolute; top: 2px; left: 10px ; }\n#index { background-color: #f2f2f2; padding-right: 25px; top: 2px; right: 12px; width: auto; float: right; }\n#next { position: absolute; top: 49px; left: 88%; }\n#asindent { margin-left: 22px; font-size: 9pt; font-family: Verdana, Courier, sans-serif; }\n.bread { color: #00f; font-size: 8pt; margin: -9px 0 -6px; }\n.leftborder { color: #00f; font-size: 8pt; margin: -9px 0 -6px; padding-top: 2px; padding-bottom: 3px; padding-left: 8px; border-left: 1px solid #bfbfbf; }\n.mult { margin-top: -8px; }\n.blue { background-color: #e6edff; margin-top: -3px; margin-bottom: -3px; padding-top: -3px; padding-bottom: -3px; }\n.rightfloater { float: right; margin-left: 15px; }\n.rules { border-bottom: 1px dotted #ccc; }\n.dots { border: dotted 1px #ccc; }\n.seealso { margin-top: 4px; margin-bottom: 4px; }\ncode { color: black; font-size: 9pt; font-family: Verdana, Courier, sans-serif; }\"\n  end\nend\n        \nif __FILE__ == $0\n  newAppcast = AppCast.new\n  newAppcast.main_worker_bee\n  newAppcast.log_message(\"It appears all went well with the build script!\")\nend\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				C973B98B0F72B80D00DF2593 /* MediaNox.m in Sources */,
+				C973B98E0F72B86200DF2593 /* queueButtonImageTransformer.m in Sources */,
+				C9D45B2D0F72BB3A0031DFFA /* queueButtonImageTransformer_left.m in Sources */,
+				C9D45CD30F72CDDA0031DFFA /* RegexKitLite.m in Sources */,
+				C90264170F72EB38003F4C9F /* GetPID.c in Sources */,
+				C902644B0F72F331003F4C9F /* mediaTypeImageTransformer.m in Sources */,
+				C90FEC920F742650002ACF8A /* DropView.m in Sources */,
+				C90FECE60F7429E9002ACF8A /* DropImageView.m in Sources */,
+				C90FED370F7434C2002ACF8A /* isOneTransformer.m in Sources */,
+				C90FED3E0F743686002ACF8A /* statusFontTransformer.m in Sources */,
+				C90FED670F743749002ACF8A /* statusTextTransformer.m in Sources */,
+				C90FEE170F745815002ACF8A /* presetNameTransformer.m in Sources */,
+				C91DF4400F759E35006D2B0D /* isActiveTransformer.m in Sources */,
+				C91DF4880F75A11F006D2B0D /* showLogButtonTextTransformer.m in Sources */,
+				C91DF5270F75B225006D2B0D /* myTableButton.m in Sources */,
+				C91DF6460F766C58006D2B0D /* myReQueueButton.m in Sources */,
+				C91DF6D30F767DBB006D2B0D /* canReQueueTransformer.m in Sources */,
+				C9A5B8500F76D48600CD721F /* isTVShowTransformer.m in Sources */,
+				C9E825360F7782D1006DFFD4 /* isEditableTransformer.m in Sources */,
+				C9E825AB0F7791DC006DFFD4 /* isNoConversionActive.m in Sources */,
+				C9E825BC0F7792AB006DFFD4 /* isAConversionActive.m in Sources */,
+				C90BA6D20F7948F80059A9EE /* hideMoveMonitoredFolderTransformer.m in Sources */,
+				C91802190F79980000A74471 /* selectedMoveMonitoredFolderTransformer.m in Sources */,
+				C91802470F799E3400A74471 /* moveMonitoredSuccessFolderActive.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MediaNox.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* English */,
+			);
+			name = MediaNox.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/build/Release\"",
+					"\"$(SRCROOT)/../../SVN & CVS Repos:Frameworks/AGRegex/build/Release\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MediaNox_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ffmpegLibs\"",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = MediaNox;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/build/Release\"",
+					"\"$(SRCROOT)/../../SVN & CVS Repos:Frameworks/AGRegex/build/Release\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MediaNox_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ffmpegLibs\"",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = MediaNox;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "/Developer/Local/Frameworks/**";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "Framworks/**";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-licucore";
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "/Developer/Local/Frameworks/**";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "Framworks/**";
+				OTHER_LDFLAGS = "-licucore";
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MediaNox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MediaNox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

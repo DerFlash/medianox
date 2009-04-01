@@ -1,0 +1,6 @@
+build_now:              'YES'
+download_base_url:      'http://medianox.googlecode.com/files/'
+appcast_basefolder:     '/users/flashit/Desktop/MediaNox/'
+appcast_xml_name:       'appcast.xml'
+keychain_privkey_name:  'Sparkle Private Key'
+css_file_name:          'rnotes.css
