@@ -135,5 +135,7 @@
 	<string>Folder named &apos;imported&apos; within the sources&apos; folder</string>
 	<key>tempMonitoredFolder</key>
 	<string>Folder named &apos;queued&apos; within the monitored folder</string>
+	<key>ffmpegBinary</key>
+	<string>ffmpeg</string>
 </dict>
 </plist>
