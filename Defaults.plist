@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>tvshowparser</key>
+	<array>
+		<dict>
+			<key>regex</key>
+			<string>(.+?)\s*-\s*([0-9]+)-([0-9]+),(.*)</string>
+			<key>parse</key>
+			<string>n,s,e,d</string>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>(.+?)\s*-\s*([0-9]+)-([0-9]+)</string>
+			<key>parse</key>
+			<string>n,s,e</string>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>(.+?)\s*-\s*([0-9]+)x([0-9]+)</string>
+			<key>parse</key>
+			<string>n,s,e</string>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>(.+?)\.S([0-9]+)E([0-9]+)</string>
+			<key>parse</key>
+			<string>n,s,e</string>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>(.+?)\.([0-9]+)([0-9]{2})</string>
+			<key>parse</key>
+			<string>n,s,e</string>
+		</dict>
+	</array>
+	<key>presets</key>
+	<array>
+		<dict>
+			<key>description</key>
+			<string>TV (by DerFlash)</string>
+			<key>arguments</key>
+			<string>-s 640x272 -vcodec libx264  -qmin 27 -qmax 51 -b 900k -bt 300k -level 30 -flags +loop -sc_threshold 40 -partitions +partp4x4 -rc_eq &apos;blurCplx^(1-qComp)&apos; -refs 2 -async 50 -acodec libfaac -ac 2 -ab 160k -g 300</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>iPod (by DerFlash)</string>
+			<key>arguments</key>
+			<string>-s 320x144 -vcodec libx264  -qmin 27  -qmax 51 -b 400k  -bt 200k -level 13 -flags +loop -sc_threshold 40 -partitions partp4x4 -rc_eq &apos;blurCplx^(1-qComp)&apos; -refs 3 -async 50 -acodec libfaac -ac 2 -ab 128k -g 300</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>HD (by DerFlash)</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 1800k -bt 300k -coder 1 -qmin 10 -qmax 51 -flags +loop -cmp +chroma -partitions +parti8x8+parti4x4+partp8x8+partb8x8 -refs 3 -bf 3 -directpred 3 -g 250 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 2 -me_method umh -me_range 16 -subq 7 -trellis 1 -flags2 +bpyramid+wpred+mixed_refs+dct8x8+fastpskip -async 50 -acodec libfaac -ac 2 -ab 192k</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>ffpreset - Normal</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 900k -bt 200k -qmin 20 -vpre $PRESETSDIR/libx264-normal.ffpreset -acodec libfaac -ac 2 -ab 128k</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>ffpreset - Better</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 1400k -bt 300k -vpre $PRESETSDIR/libx264-normal.ffpreset -acodec libfaac -ac 2 -ab 128k</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>ffpreset - HD</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 1800k -bt 300k -vpre $PRESETSDIR/libx264-hq.ffpreset -acodec libfaac -ab 128k2</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>ffpreset - Max</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 2300k -bt 300k -vpre $PRESETSDIR/libx264-max.ffpreset -acodec libfaac -ab 128k2</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>ffpreset - Lossless Slower</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 2300k -bt 300k -vpre $PRESETSDIR/libx264-lossless_slower.ffpreset -acodec libfaac -ab 128k2</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>ffpreset - Lossless Slow</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 2300k -bt 300k -vpre $PRESETSDIR/libx264-lossless_slow.ffpreset -acodec libfaac -ab 128k2</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>ffpreset - Lossless Medium</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 2300k -bt 300k -vpre $PRESETSDIR/libx264-lossless_medium.ffpreset -acodec libfaac -ab 128k2</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>ffpreset - Lossless Fast</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 2300k -bt 300k -vpre $PRESETSDIR/libx264-lossless_fast.ffpreset -acodec libfaac -ab 128k2</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>ffpreset - Lossless Ultrafast</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 2300k -bt 300k -vpre $PRESETSDIR/libx264-lossless_ultrafast.ffpreset -acodec libfaac -ab 128k2</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>ffpreset - Lossless Max</string>
+			<key>arguments</key>
+			<string>-vcodec libx264 -b 3000k -bt 300k -vpre $PRESETSDIR/libx264-lossless_max.ffpreset -acodec libfaac -ab 128k2</string>
+		</dict>
+	</array>
+	<key>mediaTypes</key>
+	<array>
+		<string>Movie</string>
+		<string>TV Show</string>
+	</array>
+	<key>allowed_extensions</key>
+	<string>wmv m4v mpg mov avi mp4 mkv divx</string>
+	<key>ffmpegStandardArgs</key>
+	<string>-y -threads 0</string>
+	<key>defaultMoviePreset</key>
+	<string>ffpreset - Normal</string>
+	<key>defaultTVShowPreset</key>
+	<string>ffpreset - Normal</string>
+	<key>moveMonitoredSuccessMode</key>
+	<integer>1</integer>
+	<key>moveMonitoredSuccessFolder</key>
+	<string>Folder named &apos;imported&apos; within the sources&apos; folder</string>
+	<key>tempMonitoredFolder</key>
+	<string>Folder named &apos;queued&apos; within the monitored folder</string>
+</dict>
+</plist>
