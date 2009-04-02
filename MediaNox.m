@@ -61,34 +61,69 @@
 	
 	NSFileManager *fileMan = [NSFileManager defaultManager];
 
+	// look for ffmpeg binaries within the app package
 	for (NSString *_files in [[NSFileManager defaultManager] contentsOfDirectoryAtPath: ffmpegBaseDir error: NULL]) {
-		if ([_files hasPrefix: @"ffmpeg"] && [fileMan isExecutableFileAtPath: [ffmpegBaseDir stringByAppendingPathComponent: _files]]) {
+		NSString *ffmpegBinAbs = [ffmpegBaseDir stringByAppendingPathComponent: _files];
+		BOOL isFolder;		
+		if ([_files hasPrefix: @"ffmpeg"] && [fileMan fileExistsAtPath:ffmpegBinAbs isDirectory: &isFolder] && !isFolder && [fileMan isExecutableFileAtPath: ffmpegBinAbs]) {
 			
-			
-			NSTask *ffmpegVersionCheckTask = [[NSTask alloc] init];
-			[ffmpegVersionCheckTask setLaunchPath: [ffmpegBaseDir stringByAppendingPathComponent: _files]];
-			[ffmpegVersionCheckTask setEnvironment: [NSDictionary dictionaryWithObjectsAndKeys: [[NSBundle mainBundle] pathForResource: @"fflibraries" ofType: @""], @"DYLD_LIBRARY_PATH", nil]];
-			
-			NSPipe *ffmpegVersionCheckPipe = [NSPipe pipe];
-			[ffmpegVersionCheckTask setStandardError: ffmpegVersionCheckPipe];
-			
-			NSFileHandle *ffmpegVersionCheckPipeHandle = [ffmpegVersionCheckPipe fileHandleForReading];
-			[ffmpegVersionCheckTask launch];
-			
-			NSString *ffmpegVersionCheckOutput = [[NSString alloc] initWithData: [ffmpegVersionCheckPipeHandle readDataToEndOfFile] encoding: NSUTF8StringEncoding];
-			
-			NSString *ffmpegVersionString = [ffmpegVersionCheckOutput stringByMatching:@"FFmpeg version ([^,]*)," capture: 1];
-			ffmpegVersionString = [NSString stringWithFormat: @"ffmpeg %@", ffmpegVersionString];
-			
-			[ffmpegBinaries addObject: [NSDictionary dictionaryWithObjectsAndKeys: _files, @"name", ffmpegVersionString, @"description", nil]];
-			
-			NSLog(@"OP:%@", ffmpegVersionString);
-			
+			NSString *ffmpegVersionString = [self checkFFmpegVersionforBinary: ffmpegBinAbs];			
+
+			if (ffmpegVersionString) {
+				[ffmpegBinaries addObject: [NSDictionary dictionaryWithObjectsAndKeys: _files, @"name", [NSString stringWithFormat: @"builtin ffmpeg (%@)", ffmpegVersionString], @"description", nil]];
+			}
 		}
 	}
-
 	
-//	[ffmpegBinaries add
+	// look for ffmpeg binaries on the system paths
+	NSMutableArray *systemBinariesToCheck = [NSMutableArray arrayWithObjects: @"/bin/ffmpeg", @"/usr/bin/ffmpeg", @"/usr/local/bin/ffmpeg", @"/opt/local/bin/ffmpeg"];
+	NSString *localProcessPATH= [[[NSProcessInfo processInfo] environment] objectForKey: @"PATH"];
+	if (localProcessPATH) {
+		NSArray *localProcessPATHsArray = [localProcessPATH componentsSeparatedByString: @":"];
+		if (localProcessPATHsArray)
+			for (NSString *localProcessPATHCompontent in localProcessPATHsArray) {
+				localProcessPATHCompontent = [localProcessPATHCompontent stringByAppendingPathComponent: @"ffmpeg"];
+				if (![systemBinariesToCheck containsObject: localProcessPATHCompontent]) [systemBinariesToCheck addObject:localProcessPATHCompontent];
+			}
+	}
+
+	for (NSString *_absFiles in systemBinariesToCheck) {
+		BOOL isFolder;
+		if ([fileMan fileExistsAtPath:_absFiles isDirectory: &isFolder] && !isFolder && [fileMan isExecutableFileAtPath: _absFiles]) {
+			
+			NSString *ffmpegVersionString = [self checkFFmpegVersionforBinary: _absFiles];			
+			
+			if (ffmpegVersionString) {
+				[ffmpegBinaries addObject: [NSDictionary dictionaryWithObjectsAndKeys: _absFiles, @"name", [NSString stringWithFormat: @"%@ (%@)", _absFiles, ffmpegVersionString], @"description", nil]];
+			}
+		}
+	}	
+}
+
+- (NSString *) checkFFmpegVersionforBinary: (NSString *) _ffmpegBin {
+	NSTask *ffmpegVersionCheckTask = [[NSTask alloc] init];
+	[ffmpegVersionCheckTask setLaunchPath: _ffmpegBin];
+	[ffmpegVersionCheckTask setEnvironment: [NSDictionary dictionaryWithObjectsAndKeys: [[NSBundle mainBundle] pathForResource: @"fflibraries" ofType: @""], @"DYLD_LIBRARY_PATH", nil]];
+	
+	NSPipe *ffmpegVersionCheckPipe = [NSPipe pipe];
+	[ffmpegVersionCheckTask setStandardError: ffmpegVersionCheckPipe];
+	
+	NSFileHandle *ffmpegVersionCheckPipeHandle = [ffmpegVersionCheckPipe fileHandleForReading];
+	[ffmpegVersionCheckTask launch];
+	
+	if (![ffmpegVersionCheckTask isRunning]) {
+		NSLog(@"TermStatus: %d", [ffmpegVersionCheckTask terminationStatus]);
+		if ([ffmpegVersionCheckTask terminationStatus] != 1) return nil;
+	}
+	
+	NSData *ffmpegVersionCheckOutputData = [ffmpegVersionCheckPipeHandle readDataToEndOfFile];
+	if (!ffmpegVersionCheckOutputData) return nil;
+	
+	NSString *ffmpegVersionCheckOutput = [[[NSString alloc] initWithData: ffmpegVersionCheckOutputData encoding: NSUTF8StringEncoding] autorelease];
+	if (!ffmpegVersionCheckOutput) return nil;
+	
+	NSString *ffmpegVersionString = [ffmpegVersionCheckOutput stringByMatching:@"FFmpeg version ([^,]*)," capture: 1];
+	return ffmpegVersionString;
 }
 
 - (NSApplicationTerminateReply) applicationShouldTerminate:(NSApplication *)sender {
@@ -380,11 +415,11 @@
 
 
 	NSFileManager *fileMan = [NSFileManager defaultManager];
-	NSString *ffmpegBinSel = [[NSUserDefaults standardUserDefaults] objectForKey: @"ffmpegBinary"];
 	
-	if (!ffmpegBinSel) ffmpegBinSel = @"ffmpeg";
+	NSString *ffmpegBin = [[NSUserDefaults standardUserDefaults] objectForKey: @"ffmpegBinary"];
+	if (!ffmpegBin) ffmpegBin = @"ffmpeg";
+	if (![ffmpegBin hasPrefix: @"/"]) ffmpegBin = [[NSBundle mainBundle] pathForResource: ffmpegBin ofType: @""];
 	
-	NSString *ffmpegBin = [[NSBundle mainBundle] pathForResource: ffmpegBinSel ofType: @""];
 	if (![fileMan isExecutableFileAtPath: ffmpegBin]) {
 		[self doLog: [NSString stringWithFormat: @"Could not find the selected ffmpeg binary (%@)! Probing default...", ffmpegBin]];
 		ffmpegBin = [[NSBundle mainBundle] pathForResource: @"ffmpeg" ofType: @""];
