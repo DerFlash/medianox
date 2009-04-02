@@ -1270,4 +1270,8 @@
 	[[NSApplication sharedApplication] orderFrontStandardAboutPanelWithOptions: [NSDictionary dictionaryWithObjectsAndKeys: @"", nil]];
 }
 
+- (IBAction) visitTVDetectionWiki: (id) sender {
+	[[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: @"http://code.google.com/p/medianox/wiki/TVDetection"]];
+}
+
 @end
