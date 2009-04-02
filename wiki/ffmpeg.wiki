@@ -1,0 +1,11 @@
+#summary Some links, tips and thoughts about ffmpeg
+
+==== ffmpeg OSX build howto ====
+  * http://troykelly.com/2007/01/18/building-ffmpeg-on-os-x/
+
+==== Thoughts ====
+  * to check dependencies: # otool -L ffmpeg
+
+==== Other links ====
+  * http://www2.mplayerhq.hu/DOCS/HTML/de/menc-feat-x264.html
+  * http://lists.mplayerhq.hu/pipermail/ffmpeg-user/2007-April/008219.html
