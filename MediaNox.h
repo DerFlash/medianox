@@ -126,4 +126,6 @@
 
 - (NSString *) checkFFmpegVersionforBinary: (NSString *) _ffmpegBin;
 
+- (IBAction) visitTVDetectionWiki: (id) sender;
+
 @end
