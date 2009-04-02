@@ -1,0 +1,24 @@
+#summary Describes the function of the TV Detection Settings
+
+= Introduction =
+
+MediaNox provides a mechanism to detect a tv show by looking at the file name.<br>
+Once one of these _tests_ matches a filename it can also use some parts of the filename as information for this tv show (like name, season, episode, ...).
+
+
+== Settings ==
+
+http://medianox.googlecode.com/svn/screenshots/Settings_TVShow_Detection.png
+
+The format of this _test_ is pretty easy.
+Every line in this table contains a _test_ - so every filename added to the queue would be checked agains every row until one of the tests succeeds. Otherwise the file is handled as a *movie*...
+
+The *left column* of the table lists the [TVDetection_regex regular expression] which is used to check/match the filename.
+This regex can (or should) also search for some sub matches(the parentheses).
+
+At this point the *right column* comes into play:
+Every argument (separated by commas) in this cell stands for one of the detected sub matches and is used as a tv show info:
+  * n - name
+  * s - season number
+  * e - episode number
+  * d - description
