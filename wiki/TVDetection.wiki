@@ -14,7 +14,7 @@ The format of this _test_ is pretty easy.
 Every line in this table contains a _test_ - so every filename added to the queue would be checked agains every row until one of the tests succeeds. Otherwise the file is handled as a *movie*...
 
 The *left column* of the table lists the [http://regexkit.sourceforge.net/Documentation/pcre/pcrepattern.html regular expression] which is used to check/match the filename.
-This regex can (or should) also search for some sub matches(the parentheses).
+This regex can (or should) also search for some subpatterns(the parentheses).
 
 At this point the *right column* comes into play:
 Every argument (separated by commas) in this cell stands for one of the detected sub matches and is used as a tv show info:
