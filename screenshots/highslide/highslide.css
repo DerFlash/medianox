@@ -60,7 +60,7 @@
 	background: black;
 }
 a.highslide-full-expand {
-   background: url(graphics/fullexpand.gif) no-repeat;
+   background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/fullexpand.gif) no-repeat;
    display: block;
    margin: 0 10px 10px 0;
    width: 34px;
@@ -77,7 +77,7 @@ a.highslide-full-expand {
 	border: 1px solid white;
 	background-color: white;
 	padding-left: 22px;
-	background-image: url(graphics/loader.white.gif);
+	background-image: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/loader.white.gif);
 	background-repeat: no-repeat;
 	background-position: 3px 1px;
 }
@@ -122,7 +122,7 @@ a.highslide-credits:hover i {
 	width: 30px;
 	height: 30px;
 	cursor: pointer;
-	background: url(graphics/close.png);
+	background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/close.png);
 	/* NOTE! For IE6, you also need to update the highslide-ie6.css file. */
 }
 
@@ -133,7 +133,7 @@ a.highslide-credits:hover i {
 .highslide-controls {
 	width: 195px;
 	height: 40px;
-	background: url(graphics/controlbar-white.gif) 0 -90px no-repeat;
+	background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/controlbar-white.gif) 0 -90px no-repeat;
 	margin: 20px 15px 10px 0;
 }
 .highslide-controls ul {
@@ -143,7 +143,7 @@ a.highslide-credits:hover i {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	background: url(graphics/controlbar-white.gif) right -90px no-repeat;
+	background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/controlbar-white.gif) right -90px no-repeat;
 
 }
 .highslide-controls li {
@@ -152,7 +152,7 @@ a.highslide-credits:hover i {
 	margin:0;
 }
 .highslide-controls a {
-	background-image: url(graphics/controlbar-white.gif);
+	background-image: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/controlbar-white.gif);
 	display: block;
 	float: left;
 	height: 30px;
@@ -279,7 +279,7 @@ a.highslide-credits:hover i {
 	margin-top: 5px;
 	height: 11px;
 	width: 11px;
-	background: url(graphics/resize.gif) no-repeat;
+	background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/resize.gif) no-repeat;
 }
 .highslide-footer .highslide-resize span {
 	display: none;
@@ -329,7 +329,7 @@ a.highslide-credits:hover i {
 	display: block;
 	height: 16px;
 	width: 16px;
-	background-image: url(graphics/closeX.png);
+	background-image: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/closeX.png);
 }
 .draggable-header .highslide-header .highslide-close a:hover {
 	background-position: 0 16px;
@@ -442,7 +442,7 @@ a.highslide-credits:hover i {
 .dark .highslide-controls,
 .dark .highslide-controls ul,
 .dark .highslide-controls a {
-	background-image: url(graphics/controlbar-black-border.gif);
+	background-image: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/controlbar-black-border.gif);
 }
 
 /* hs.wrapperClassName = 'floating-caption' */
@@ -464,7 +464,7 @@ a.highslide-credits:hover i {
 	cursor: default;
 	padding: 0 0 0 22px;
 	margin: 0;
-	background: url(graphics/icon.gif) no-repeat 0 1px;
+	background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/icon.gif) no-repeat 0 1px;
 }
 .controls-in-heading .highslide-controls {
 	width: 105px;
@@ -484,7 +484,7 @@ a.highslide-credits:hover i {
 	padding: 0;
 }
 .controls-in-heading .highslide-controls a {
-	background-image: url(graphics/controlbar-white-small.gif);
+	background-image: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/controlbar-white-small.gif);
 	height: 20px;
 	width: 20px;
 }
@@ -564,7 +564,7 @@ a.highslide-credits:hover i {
 	display: none;
 }
 .text-controls li {
-    background-image: url(graphics/controlbar-text-buttons.png);
+    background-image: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/controlbar-text-buttons.png);
 	background-position: right top !important;
 	padding: 0;
 	margin-left: 15px;
@@ -572,7 +572,7 @@ a.highslide-credits:hover i {
 	width: auto;
 }
 .text-controls a {
-    background: url(graphics/controlbar-text-buttons.png) no-repeat;
+    background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/controlbar-text-buttons.png) no-repeat;
     background-position: left top !important;
     position: relative;
     left: -10px;
@@ -582,7 +582,7 @@ a.highslide-credits:hover i {
 	text-decoration: none !important;
 }
 .text-controls a span {
-	background: url(graphics/controlbar-text-buttons.png) no-repeat;
+	background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/controlbar-text-buttons.png) no-repeat;
     margin: 1px 2px 1px 10px;
 	display: block;
     min-width: 4em;
@@ -709,7 +709,7 @@ a.highslide-credits:hover i {
 .highslide-thumbstrip-horizontal .highslide-scroll-up div {
 	margin-bottom: 10px;
 	cursor: pointer;
-	background: url(graphics/scrollarrows.png) left center no-repeat;
+	background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/scrollarrows.png) left center no-repeat;
 	height: 42px;
 }
 .highslide-thumbstrip-horizontal .highslide-scroll-down {
@@ -723,7 +723,7 @@ a.highslide-credits:hover i {
 .highslide-thumbstrip-horizontal .highslide-scroll-down div {
 	margin-bottom: 10px;
 	cursor: pointer;
-	background: url(graphics/scrollarrows.png) center right no-repeat;
+	background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/scrollarrows.png) center right no-repeat;
 	height: 42px;
 }
 .highslide-thumbstrip-horizontal table {
@@ -765,7 +765,7 @@ a.highslide-credits:hover i {
 .highslide-thumbstrip-vertical .highslide-scroll-up div {
 	margin-left: 10px;
 	cursor: pointer;
-	background: url(graphics/scrollarrows.png) top center no-repeat;
+	background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/scrollarrows.png) top center no-repeat;
 	height: 25px;
 }
 .highslide-thumbstrip-vertical .highslide-scroll-down {
@@ -779,7 +779,7 @@ a.highslide-credits:hover i {
 .highslide-thumbstrip-vertical .highslide-scroll-down div {
 	margin-left: 10px;
 	cursor: pointer;
-	background: url(graphics/scrollarrows.png) bottom center no-repeat;
+	background: url(http://www.gmodules.com/gadgets/proxy?url=http://medianox.googlecode.com/svn/screenshots/highslide/graphics/scrollarrows.png) bottom center no-repeat;
 	height: 25px;
 }
 .highslide-thumbstrip-vertical table {
