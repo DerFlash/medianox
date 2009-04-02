@@ -124,4 +124,6 @@
 
 -(void) prepareffmpegBinariesForSettingsView;
 
+- (NSString *) checkFFmpegVersionforBinary: (NSString *) _ffmpegBin;
+
 @end
