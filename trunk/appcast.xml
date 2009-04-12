@@ -7,6 +7,22 @@
       <language>en</language>
       
 <item>
+	<title>Version 0.8 (156)</title>
+	  <sparkle:releaseNotesLink>
+	    http://medianox.googlecode.com/svn/trunk/156.html
+	  </sparkle:releaseNotesLink>
+	<pubDate>Sun, 12 Apr 2009 12:24:07 +0200</pubDate>
+	<enclosure
+		url="http://medianox.googlecode.com/files/MediaNox v0.8 156.zip"
+		sparkle:version="156"
+		sparkle:shortVersionString="0.8"
+		type="application/octet-stream"
+		length="8955587"
+		sparkle:dsaSignature="MC0CFE1BepBubiXq04TjBk3Q1wq3KgzBAhUAhUs1LYi0OfJr6d8Az/1I3lx+T8c="
+	/>
+</item>
+
+<item>
 	<title>Version 0.7 (138)</title>
 	  <sparkle:releaseNotesLink>
 	    http://medianox.googlecode.com/svn/trunk/138.html
