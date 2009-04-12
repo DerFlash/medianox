@@ -54,6 +54,7 @@
 		C98FAEA60F81B23700AA6C60 /* 133.html in Resources */ = {isa = PBXBuildFile; fileRef = C98FAEA50F81B23700AA6C60 /* 133.html */; };
 		C99FB5B30F81AEEE000E2A1D /* rnotes.css  in Resources */ = {isa = PBXBuildFile; fileRef = C99FB5B20F81AEEE000E2A1D /* rnotes.css  */; };
 		C9A5B8500F76D48600CD721F /* isTVShowTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5B84F0F76D48600CD721F /* isTVShowTransformer.m */; };
+		C9BA2D2E0F90F0AF00F24087 /* importDestinationTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA2D2D0F90F0AF00F24087 /* importDestinationTransformer.m */; };
 		C9C124640F83CCB300884A91 /* ffmpeg_cvs18302 in Resources */ = {isa = PBXBuildFile; fileRef = C9C124630F83CCB300884A91 /* ffmpeg_cvs18302 */; };
 		C9C1246C0F83CD8700884A91 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = C9C1246B0F83CD8700884A91 /* ffmpeg */; };
 		C9C8EA4B0F8140BA000E154B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C9C8EA4A0F8140BA000E154B /* Credits.rtf */; };
@@ -150,6 +151,8 @@
 		C99FB5B20F81AEEE000E2A1D /* rnotes.css  */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rnotes.css "; sourceTree = "<group>"; };
 		C9A5B84E0F76D48600CD721F /* isTVShowTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = isTVShowTransformer.h; sourceTree = "<group>"; };
 		C9A5B84F0F76D48600CD721F /* isTVShowTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = isTVShowTransformer.m; sourceTree = "<group>"; };
+		C9BA2D2C0F90F0AF00F24087 /* importDestinationTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = importDestinationTransformer.h; sourceTree = "<group>"; };
+		C9BA2D2D0F90F0AF00F24087 /* importDestinationTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = importDestinationTransformer.m; sourceTree = "<group>"; };
 		C9C124630F83CCB300884A91 /* ffmpeg_cvs18302 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg_cvs18302; sourceTree = "<group>"; };
 		C9C1246B0F83CD8700884A91 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		C9C8EA4A0F8140BA000E154B /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -316,6 +319,8 @@
 				C91802180F79980000A74471 /* selectedMoveMonitoredFolderTransformer.m */,
 				C91802450F799E3400A74471 /* moveMonitoredSuccessFolderActive.h */,
 				C91802460F799E3400A74471 /* moveMonitoredSuccessFolderActive.m */,
+				C9BA2D2C0F90F0AF00F24087 /* importDestinationTransformer.h */,
+				C9BA2D2D0F90F0AF00F24087 /* importDestinationTransformer.m */,
 			);
 			name = BindingTransformer;
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 				C90BA6D20F7948F80059A9EE /* hideMoveMonitoredFolderTransformer.m in Sources */,
 				C91802190F79980000A74471 /* selectedMoveMonitoredFolderTransformer.m in Sources */,
 				C91802470F799E3400A74471 /* moveMonitoredSuccessFolderActive.m in Sources */,
+				C9BA2D2E0F90F0AF00F24087 /* importDestinationTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,9 +28,9 @@
 
 - (id)transformedValue: (id) value {
 	if ([value hasPrefix: @"/"]) {
-		return [NSNumber numberWithInt: 0];
+		return [NSNumber numberWithInt: 1];
 	}
-	return [NSNumber numberWithInt: 1];
+	return [NSNumber numberWithInt: 2];
 }
 
 
