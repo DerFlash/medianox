@@ -125,6 +125,8 @@
 	<string>wmv m4v mpg mov avi mp4 mkv divx</string>
 	<key>ffmpegStandardArgs</key>
 	<string>-y -threads 0</string>
+	<key>importDestination</key>
+	<string>iTunes</string>
 	<key>defaultMoviePreset</key>
 	<string>ffpreset - Normal</string>
 	<key>defaultTVShowPreset</key>

@@ -49,6 +49,7 @@
 	IBOutlet NSTabView *settingsTabs;
 	IBOutlet NSPopUpButton *moveSourcePopupButton;
 	IBOutlet NSPopUpButton *tempMonitoredFolderPopupButton;
+	IBOutlet NSPopUpButton *importDestinationPopupButton;
 }
 
 
@@ -64,8 +65,8 @@
 - (void) queueThisFile: (NSString *) mediaURL withOrgURLEntry: (NSString *) _orgURL;
 
 - (void) fetchNextFileFromQueue;
-- (BOOL) addThisItemToItunes: (NSMutableDictionary *) mediaDict;
-- (oneway void) importCurrentMediaToiTunes: (NSMutableDictionary *) _mediaDict;
+- (BOOL) convertMediaFile: (NSMutableDictionary *) mediaDict;
+- (oneway void) importConvertedMediaToiTunes: (NSMutableDictionary *) _mediaDict;
 - (void) askToRemoveRunningTask: (NSMutableDictionary *) mediaDict;
 
 
@@ -112,10 +113,14 @@
 - (void) settings_selectFFMPEGSettings: (id) sender;
 - (void) settings_selectMonitorSettings: (id) sender;
 - (void) settings_selectTVShowDetection: (id) sender;
+- (void) settings_selectUpdate: (id) sender;
 
 
 - (void) changeMoveMonitoredSuccessFolder: (id) sender;
 - (void) changeMoveMonitoredSuccessFolderToDefault: (id) sender;
+
+- (void) changeImportDestination: (id) sender;
+- (void) changeImportDestinationToiTunes: (id) sender;
 
 - (void) changeTempMonitoredFolder: (id) sender;
 - (void) changeTempMonitoredFolderToDefault: (id) sender;

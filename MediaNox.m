@@ -398,13 +398,13 @@
 	}
 	
 	for (NSMutableDictionary *nextMediaFile in [queueController arrangedObjects]) {
-		if ([[nextMediaFile objectForKey: @"status"] intValue] == 0) [self addThisItemToItunes: nextMediaFile];
+		if ([[nextMediaFile objectForKey: @"status"] intValue] == 0) [self convertMediaFile: nextMediaFile];
 	}
 	
 	[self updateBadge];
 }
 
-- (BOOL) addThisItemToItunes: (NSMutableDictionary *) mediaDict {
+- (BOOL) convertMediaFile: (NSMutableDictionary *) mediaDict {
 	if ([self isFFmpegAlreadyRunning]) return NO;
 	
 	currentMediaFile = mediaDict;
@@ -482,6 +482,20 @@
 	[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-aspect", videoAspectRation, nil]];	// the calculated video aspect ratio
 	[ffmpegArgArray addObjectsFromArray: [self parseFfmpegArguments: [[NSUserDefaults standardUserDefaults] stringForKey: @"ffmpegStandardArgs"]]];
 	[ffmpegArgArray addObjectsFromArray: [self getArgumentsForPresetNamed: [mediaDict objectForKey: @"preset"]]];
+	
+	// add the h264 metadata
+	if ([[mediaDict objectForKey: @"type"] isEqualToString: @"Movie"]) {
+		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"title=%@", [mediaDict objectForKey: @"name"]], nil]];
+		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"comment=OrgFileName: %@", [[mediaDict objectForKey: @"url"] lastPathComponent]], nil]];
+		
+	} else if ([[mediaDict objectForKey: @"type"] isEqualToString: @"TV Show"]) {
+		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"title=%@ S$@E%@", [mediaDict objectForKey: @"name"], [mediaDict objectForKey: @"seasonNo"], [mediaDict objectForKey: @"episodeNo"]], nil]];
+		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"comment=OrgFileName: %@ | %@", [[mediaDict objectForKey: @"url"] lastPathComponent], [mediaDict objectForKey: @"episodeDesc"]], nil]];
+		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"album=%@", [mediaDict objectForKey: @"name"]], nil]];
+		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"track=%@", [mediaDict objectForKey: @"episodeNo"]], nil]];
+
+	}
+	
 	[ffmpegArgArray addObject: destFile];	// finally add the output filename
 	
 	
@@ -514,7 +528,38 @@
 	return YES;
 }
 
-- (oneway void) importCurrentMediaToiTunes: (NSMutableDictionary *) _mediaDict {
+- (oneway void) importConvertedMediaToFolder: (NSMutableDictionary *) _mediaDict {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+	// the source
+	NSString *convertedFilePath = [_mediaDict objectForKey: @"urlDestination"];
+	
+	// build the destination path
+	NSString *seasonString = [_mediaDict objectForKey: @"seasonNo"];
+	NSString *episodeString = [_mediaDict objectForKey: @"episodeNo"];
+	if (seasonString && seasonString.length == 1) seasonString = [@"0" stringByAppendingString: seasonString];
+	if (episodeString && episodeString.length == 1) episodeString = [@"0" stringByAppendingString: episodeString];
+	
+	NSString *destFileNameComplete;
+	if ([[_mediaDict objectForKey: @"type"] isEqualToString: @"Movie"]) destFileNameComplete = [NSString stringWithFormat: @"%@.mp4", [_mediaDict objectForKey: @"name"]];
+	else if ([[_mediaDict objectForKey: @"type"] isEqualToString: @"TV Show"]) destFileNameComplete = [NSString stringWithFormat: @"%@ [S%@E%@] %@.mp4", [_mediaDict objectForKey: @"name"], seasonString, episodeString, [_mediaDict objectForKey: @"episodeDesc"]];
+	
+	NSString *fullFileDest = [[[NSUserDefaults standardUserDefaults] stringForKey: @"importDestination"] stringByAppendingPathComponent: destFileNameComplete];
+
+	
+	[[NSFileManager defaultManager] createDirectoryAtPath: [fullFileDest stringByDeletingLastPathComponent] withIntermediateDirectories: YES attributes: nil error: NULL];
+	[[NSFileManager defaultManager] removeFileAtPath:fullFileDest handler: nil];
+	[[NSFileManager defaultManager] moveItemAtPath: convertedFilePath toPath: fullFileDest error: NULL];
+
+	[currentMediaFile setObject: [NSNumber numberWithInt: -1] forKey: @"status"];
+
+	[self performSelectorOnMainThread:@selector( doLog: ) withObject:@"Import done" waitUntilDone:NO];
+	[self performSelectorOnMainThread:@selector( fetchNextFileFromQueue ) withObject: nil waitUntilDone:NO];
+	
+	[pool release];		
+}
+
+- (oneway void) importConvertedMediaToiTunes: (NSMutableDictionary *) _mediaDict {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	// load the script from a resource by fetching its URL from within our bundle
@@ -704,7 +749,11 @@
 			[ffmpegState setDoubleValue: 0];
 			[ffmpegState setCriticalValue: 0];
 			
-			[NSThread detachNewThreadSelector:@selector( importCurrentMediaToiTunes: ) toTarget:self withObject: currentMediaFile];
+			if ([[[NSUserDefaults standardUserDefaults] stringForKey: @"importDestination"] isEqualToString: @"iTunes"]) {
+				[NSThread detachNewThreadSelector:@selector( importConvertedMediaToiTunes: ) toTarget:self withObject: currentMediaFile];
+			} else {
+				[NSThread detachNewThreadSelector:@selector( importConvertedMediaToFolder: ) toTarget:self withObject: currentMediaFile];
+			}
 			
 		} else {
 			[self doLog: @"Convert failed"];
@@ -1204,6 +1253,9 @@
 - (void) settings_selectTVShowDetection: (id) sender {
 	[settingsTabs selectTabViewItemWithIdentifier: @"tvshowdetection"];
 }
+- (void) settings_selectUpdate: (id) sender {
+	[settingsTabs selectTabViewItemWithIdentifier: @"update"];
+}
 
 - (void) changeMoveMonitoredSuccessFolder: (id) sender {	
 	NSOpenPanel *selectFilesDialog = [NSOpenPanel openPanel];
@@ -1219,20 +1271,21 @@
 			[[NSUserDefaults standardUserDefaults] setObject: monitorFolder forKey: @"moveMonitoredSuccessFolder"];
 			[moveSourcePopupButton removeItemAtIndex: 0];
 			[moveSourcePopupButton insertItemWithTitle: monitorFolder atIndex:0];
+			[[moveSourcePopupButton itemAtIndex: 0] setTag: 1];
 			[[moveSourcePopupButton itemAtIndex: 0] setHidden: NO];
 			[[moveSourcePopupButton itemAtIndex: 1] setHidden: NO];
-			[moveSourcePopupButton selectItemAtIndex: 0];
+			[moveSourcePopupButton selectItemWithTag: 1];
 		}
 	} else {
-		if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"moveMonitoredSuccessFolder"] hasPrefix: @"/"]) [moveSourcePopupButton selectItemAtIndex: 0];
-		else [moveSourcePopupButton selectItemAtIndex: 2];
+		if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"moveMonitoredSuccessFolder"] hasPrefix: @"/"]) [moveSourcePopupButton selectItemWithTag: 1];
+		else [moveSourcePopupButton selectItemWithTag: 2];
 	}
 }
 - (void) changeMoveMonitoredSuccessFolderToDefault: (id) sender {	
 	[[NSUserDefaults standardUserDefaults] setObject: @"Folder named 'imported' within the sources' folder" forKey: @"moveMonitoredSuccessFolder"];
 	[[moveSourcePopupButton itemAtIndex: 0] setHidden: YES];
 	[[moveSourcePopupButton itemAtIndex: 1] setHidden: YES];
-	[moveSourcePopupButton selectItemAtIndex: 2];
+	[moveSourcePopupButton selectItemWithTag: 2];
 }
 
 - (void) changeTempMonitoredFolder: (id) sender {
@@ -1241,7 +1294,6 @@
 	[selectFilesDialog setCanChooseDirectories: YES];
 	[selectFilesDialog setAllowsMultipleSelection: NO];
 	[selectFilesDialog beginSheetForDirectory: nil file: nil types: nil modalForWindow: preferencesWindow modalDelegate: self didEndSelector: @selector(changeTempMonitoredFolderDialogDidEnd:returnCode:contextInfo:) contextInfo: nil];
-	
 }
 - (void) changeTempMonitoredFolderDialogDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *) popupButton {
 	if (returnCode == NSOKButton) {
@@ -1250,21 +1302,54 @@
 			[[NSUserDefaults standardUserDefaults] setObject: tempMonitoredFolder forKey: @"tempMonitoredFolder"];
 			[tempMonitoredFolderPopupButton removeItemAtIndex: 0];
 			[tempMonitoredFolderPopupButton insertItemWithTitle: tempMonitoredFolder atIndex:0];
+			[[tempMonitoredFolderPopupButton itemAtIndex: 0] setTag: 1];
 			[[tempMonitoredFolderPopupButton itemAtIndex: 0] setHidden: NO];
 			[[tempMonitoredFolderPopupButton itemAtIndex: 1] setHidden: NO];
 			[tempMonitoredFolderPopupButton selectItemAtIndex: 0];
 		}
 	} else {
-		if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"tempMonitoredFolder"] hasPrefix: @"/"]) [tempMonitoredFolderPopupButton selectItemAtIndex: 0];
-		else [tempMonitoredFolderPopupButton selectItemAtIndex: 2];
+		if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"tempMonitoredFolder"] hasPrefix: @"/"]) [tempMonitoredFolderPopupButton selectItemWithTag: 1];
+		else [tempMonitoredFolderPopupButton selectItemWithTag: 2];
 	}
 }
 - (void) changeTempMonitoredFolderToDefault: (id) sender {
 	[[NSUserDefaults standardUserDefaults] setObject: @"Folder named 'queued' within the monitored folder" forKey: @"tempMonitoredFolder"];
 	[[tempMonitoredFolderPopupButton itemAtIndex: 0] setHidden: YES];
 	[[tempMonitoredFolderPopupButton itemAtIndex: 1] setHidden: YES];
-	[tempMonitoredFolderPopupButton selectItemAtIndex: 2];	
+	[tempMonitoredFolderPopupButton selectItemWithTag: 2];	
 }
+
+- (void) changeImportDestination: (id) sender {
+	NSOpenPanel *selectFilesDialog = [NSOpenPanel openPanel];
+	[selectFilesDialog setCanChooseFiles: NO];
+	[selectFilesDialog setCanChooseDirectories: YES];
+	[selectFilesDialog setAllowsMultipleSelection: NO];
+	[selectFilesDialog beginSheetForDirectory: nil file: nil types: nil modalForWindow: preferencesWindow modalDelegate: self didEndSelector: @selector(changeImportDestinationDialogDidEnd:returnCode:contextInfo:) contextInfo: nil];
+}
+- (void) changeImportDestinationDialogDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *) popupButton {
+	if (returnCode == NSOKButton) {
+		if ([panel filenames].count) {
+			NSString *tempMonitoredFolder = [[panel filenames] objectAtIndex: 0];
+			[[NSUserDefaults standardUserDefaults] setObject: tempMonitoredFolder forKey: @"importDestination"];
+			[importDestinationPopupButton removeItemAtIndex: 0];
+			[importDestinationPopupButton insertItemWithTitle: tempMonitoredFolder atIndex:0];
+			[[importDestinationPopupButton itemAtIndex: 0] setTag: 1];
+			[[importDestinationPopupButton itemAtIndex: 0] setHidden: NO];
+			[[importDestinationPopupButton itemAtIndex: 1] setHidden: NO];
+			[importDestinationPopupButton selectItemWithTag: 1];
+		}
+	} else {
+		if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"importDestination"] hasPrefix: @"/"]) [importDestinationPopupButton selectItemWithTag: 1];
+		else [importDestinationPopupButton selectItemWithTag: 2];
+	}
+}
+- (void) changeImportDestinationToiTunes: (id) sender {
+	[[NSUserDefaults standardUserDefaults] setObject: @"iTunes" forKey: @"importDestination"];
+	[[importDestinationPopupButton itemAtIndex: 0] setHidden: YES];
+	[[importDestinationPopupButton itemAtIndex: 1] setHidden: YES];
+	[importDestinationPopupButton selectItemWithTag: 2];	
+}
+
 
 - (IBAction) showAboutDialog: (id) sender {
 	[[NSApplication sharedApplication] orderFrontStandardAboutPanelWithOptions: [NSDictionary dictionaryWithObjectsAndKeys: @"", nil]];
