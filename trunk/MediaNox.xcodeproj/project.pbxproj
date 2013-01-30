@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MediaNox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MediaNox.xib */; };
+		4997F37116B89DA800070472 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4997F37016B89D9E00070472 /* libFMDB.a */; };
+		4997F38116B8A85600070472 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4997F38016B8A85600070472 /* libsqlite3.dylib */; };
+		4997F38316B8A86A00070472 /* RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4997F38216B8A86A00070472 /* RegexKit.framework */; };
+		4997F38516B8A90400070472 /* RegexKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 4997F38416B8A90400070472 /* RegexKit.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		C90264170F72EB38003F4C9F /* GetPID.c in Sources */ = {isa = PBXBuildFile; fileRef = C90264150F72EB38003F4C9F /* GetPID.c */; };
@@ -36,8 +40,6 @@
 		C926275A0F8412280008BF64 /* 138.html in Resources */ = {isa = PBXBuildFile; fileRef = C92627590F8412280008BF64 /* 138.html */; };
 		C944C5780F8151F6002E610C /* sparkle_public_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = C944C5770F8151F6002E610C /* sparkle_public_key.pem */; };
 		C95080800F81AA5F00605B39 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = C950807F0F81AA5F00605B39 /* appcast.xml */; };
-		C960013A0F7692ED00F662B6 /* RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96001390F7692ED00F662B6 /* RegexKit.framework */; };
-		C96001430F76934400F662B6 /* RegexKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C96001390F7692ED00F662B6 /* RegexKit.framework */; };
 		C97160E70F81944400C0FC0D /* gpl-2.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = C97160E60F81944400C0FC0D /* gpl-2.0.txt */; };
 		C971615A0F819DE700C0FC0D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97161590F819DE700C0FC0D /* Sparkle.framework */; };
 		C973B94D0F72934C00DF2593 /* icon_select.png in Resources */ = {isa = PBXBuildFile; fileRef = C973B94C0F72934C00DF2593 /* icon_select.png */; };
@@ -68,6 +70,30 @@
 		C9EDA30F0F83BFF8000F5CAE /* fflibraries in Resources */ = {isa = PBXBuildFile; fileRef = C9EDA30E0F83BFF8000F5CAE /* fflibraries */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4997F36D16B89D9E00070472 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4997F36816B89D9E00070472 /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E;
+			remoteInfo = fmdb;
+		};
+		4997F36F16B89D9E00070472 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4997F36816B89D9E00070472 /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE4290EF12B42F870088BD94;
+			remoteInfo = FMDB;
+		};
+		4997F37216B89DB500070472 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4997F36816B89D9E00070472 /* fmdb.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE4290EE12B42F870088BD94;
+			remoteInfo = FMDB;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		C96001410F76930900F662B6 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -75,8 +101,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4997F38516B8A90400070472 /* RegexKit.framework in Copy Files */,
 				C982CCA80F81A178001EDAC8 /* Sparkle.framework in Copy Files */,
-				C96001430F76934400F662B6 /* RegexKit.framework in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +114,10 @@
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MediaNox.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MediaNox_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaNox_Prefix.pch; sourceTree = "<group>"; };
+		4997F36816B89D9E00070472 /* fmdb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fmdb.xcodeproj; path = fmdb/fmdb.xcodeproj; sourceTree = "<group>"; };
+		4997F38016B8A85600070472 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		4997F38216B8A86A00070472 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = /Developer/Local/Frameworks/RegexKit.framework; sourceTree = "<absolute>"; };
+		4997F38416B8A90400070472 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = ../../../../../../Developer/Local/Frameworks/RegexKit.framework; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* MediaNox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaNox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90264150F72EB38003F4C9F /* GetPID.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GetPID.c; sourceTree = "<group>"; };
@@ -132,7 +162,6 @@
 		C92627590F8412280008BF64 /* 138.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 138.html; sourceTree = "<group>"; };
 		C944C5770F8151F6002E610C /* sparkle_public_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sparkle_public_key.pem; sourceTree = "<group>"; };
 		C950807F0F81AA5F00605B39 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
-		C96001390F7692ED00F662B6 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = Local/Frameworks/RegexKit.framework; sourceTree = DEVELOPER_DIR; };
 		C97160E60F81944400C0FC0D /* gpl-2.0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "gpl-2.0.txt"; sourceTree = "<group>"; };
 		C97161590F819DE700C0FC0D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		C973B94C0F72934C00DF2593 /* icon_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_select.png; sourceTree = "<group>"; };
@@ -176,8 +205,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4997F38316B8A86A00070472 /* RegexKit.framework in Frameworks */,
+				4997F38116B8A85600070472 /* libsqlite3.dylib in Frameworks */,
+				4997F37116B89DA800070472 /* libFMDB.a in Frameworks */,
 				C91DFACF0F768B33006D2B0D /* Cocoa.framework in Frameworks */,
-				C960013A0F7692ED00F662B6 /* RegexKit.framework in Frameworks */,
 				C971615A0F819DE700C0FC0D /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,8 +238,9 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4997F38216B8A86A00070472 /* RegexKit.framework */,
+				4997F38016B8A85600070472 /* libsqlite3.dylib */,
 				C97161590F819DE700C0FC0D /* Sparkle.framework */,
-				C96001390F7692ED00F662B6 /* RegexKit.framework */,
 				C91DFACE0F768B33006D2B0D /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -232,6 +264,8 @@
 		29B97314FDCFA39411CA2CEA /* MediaNox */ = {
 			isa = PBXGroup;
 			children = (
+				4997F38416B8A90400070472 /* RegexKit.framework */,
+				4997F36816B89D9E00070472 /* fmdb.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -280,6 +314,15 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4997F36916B89D9E00070472 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4997F36E16B89D9E00070472 /* fmdb */,
+				4997F37016B89D9E00070472 /* libFMDB.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C90264480F72F30D003F4C9F /* BindingTransformer */ = {
@@ -390,6 +433,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4997F37316B89DB500070472 /* PBXTargetDependency */,
 			);
 			name = MediaNox;
 			productInstallPath = "$(HOME)/Applications";
@@ -404,15 +448,42 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MediaNox" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* MediaNox */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4997F36916B89D9E00070472 /* Products */;
+					ProjectRef = 4997F36816B89D9E00070472 /* fmdb.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* MediaNox */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4997F36E16B89D9E00070472 /* fmdb */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = fmdb;
+			remoteRef = 4997F36D16B89D9E00070472 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4997F37016B89D9E00070472 /* libFMDB.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFMDB.a;
+			remoteRef = 4997F36F16B89D9E00070472 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -518,6 +589,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4997F37316B89DB500070472 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FMDB;
+			targetProxy = 4997F37216B89DB500070472 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -550,6 +629,7 @@
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
 					"\"$(SRCROOT)\"",
+					/Developer/Local/Frameworks,
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -557,6 +637,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MediaNox_Prefix.pch;
+				HEADER_SEARCH_PATHS = "./**";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
@@ -580,10 +661,12 @@
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
 					"\"$(SRCROOT)\"",
+					/Developer/Local/Frameworks,
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MediaNox_Prefix.pch;
+				HEADER_SEARCH_PATHS = "./**";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
@@ -598,32 +681,34 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "/Developer/Local/Frameworks/**";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LIBRARY_SEARCH_PATHS = "Framworks/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-licucore";
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "/Developer/Local/Frameworks/**";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LIBRARY_SEARCH_PATHS = "Framworks/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_LDFLAGS = "-licucore";
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
