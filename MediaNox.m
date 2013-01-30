@@ -9,13 +9,21 @@
 #import "MediaNox.h"
 #import "RegexKitLite.h"
 
+#define restrict
 #import <RegexKit/RegexKit.h>
 
 #include "GetPID.h"
 #include <Carbon/Carbon.h>
 
+@interface MediaNox ()
+
+@property (nonatomic, retain) FMDatabase *database;
+
+@end
+
 @implementation MediaNox
 
+@synthesize database;
 
 - (id) init {
 	if (self = [super init]) {
@@ -25,12 +33,27 @@
 		
 		monitorFolderTimer = nil;
 		fiveSecondsAgoCheckDate = -1;
+                
 	}
 	return self;
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
 	
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *applicationSupportDirectory = [paths objectAtIndex:0];
+    NSString *sqlitePath = [applicationSupportDirectory stringByAppendingPathComponent: @"MediaNox/imports.sqlite"];
+    [[NSFileManager defaultManager] createDirectoryAtPath: [sqlitePath stringByDeletingLastPathComponent] withIntermediateDirectories: YES attributes: nil error: NULL];
+    
+    self.database = [[FMDatabase alloc] initWithPath: sqlitePath];
+    [self.database open];
+    
+    FMResultSet *s = [self.database executeQuery:@"SELECT * FROM imports"];
+    if (s == nil) {
+        [self.database executeUpdate: @"CREATE TABLE imports (name varchar(255) NOT NULL, PRIMARY KEY (name))"];
+    }
+
+    
 	NSString *defaultsFile = [[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"];
 	[[NSUserDefaults standardUserDefaults] registerDefaults: [NSDictionary dictionaryWithContentsOfFile: defaultsFile]];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkFFMPegStatus:) name:NSTaskDidTerminateNotification object:nil];
@@ -76,7 +99,7 @@
 	}
 	
 	// look for ffmpeg binaries on the system paths
-	NSMutableArray *systemBinariesToCheck = [NSMutableArray arrayWithObjects: @"/bin/ffmpeg", @"/usr/bin/ffmpeg", @"/usr/local/bin/ffmpeg", @"/opt/local/bin/ffmpeg"];
+	NSMutableArray *systemBinariesToCheck = [NSMutableArray arrayWithObjects: @"/bin/ffmpeg", @"/usr/bin/ffmpeg", @"/usr/local/bin/ffmpeg", @"/opt/local/bin/ffmpeg", nil];
 	NSString *localProcessPATH= [[[NSProcessInfo processInfo] environment] objectForKey: @"PATH"];
 	if (localProcessPATH) {
 		NSArray *localProcessPATHsArray = [localProcessPATH componentsSeparatedByString: @":"];
@@ -139,6 +162,8 @@
 	
 	[[NSFileManager defaultManager] removeItemAtPath: @"/tmp/MediaNox" error: NULL];
 	[[NSFileManager defaultManager] removeItemAtPath: @"/tmp/mp4Convert" error: NULL];
+    
+    [self.database close];
 }
 
 - (BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
@@ -489,7 +514,7 @@
 		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"comment=OrgFileName: %@", [[mediaDict objectForKey: @"url"] lastPathComponent]], nil]];
 		
 	} else if ([[mediaDict objectForKey: @"type"] isEqualToString: @"TV Show"]) {
-		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"title=%@ S$@E%@", [mediaDict objectForKey: @"name"], [mediaDict objectForKey: @"seasonNo"], [mediaDict objectForKey: @"episodeNo"]], nil]];
+		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"title=%@ S%@E%@", [mediaDict objectForKey: @"name"], [mediaDict objectForKey: @"seasonNo"], [mediaDict objectForKey: @"episodeNo"]], nil]];
 		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"comment=OrgFileName: %@ | %@", [[mediaDict objectForKey: @"url"] lastPathComponent], [mediaDict objectForKey: @"episodeDesc"]], nil]];
 		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"album=%@", [mediaDict objectForKey: @"name"]], nil]];
 		[ffmpegArgArray addObjectsFromArray: [NSArray arrayWithObjects: @"-metadata", [NSString stringWithFormat: @"track=%@", [mediaDict objectForKey: @"episodeNo"]], nil]];
@@ -874,7 +899,7 @@
 	[[NSUserDefaults standardUserDefaults] setObject: _monitorFolder forKey: @"monitoredFolder"];
 	
 	if (monitorFolderTimer != nil) [monitorFolderTimer invalidate];
-	monitorFolderTimer = [[NSTimer alloc] initWithFireDate: [NSDate date] interval:5 target: self selector: @selector(checkMonitoredFolder:) userInfo: _monitorFolder repeats: YES];
+	monitorFolderTimer = [[NSTimer alloc] initWithFireDate: [NSDate date] interval:30 target: self selector: @selector(checkMonitoredFolder:) userInfo: _monitorFolder repeats: YES];
 	[[NSRunLoop currentRunLoop] addTimer: monitorFolderTimer forMode: NSDefaultRunLoopMode];
 	
 	[monitorWheel startAnimation: self];
@@ -903,30 +928,13 @@
 	for (NSString *monitorFolderContentFile in monitorFolderContents) {
 		if ([[[[NSUserDefaults standardUserDefaults] objectForKey: @"allowed_extensions"] componentsSeparatedByString: @" "] containsObject: [monitorFolderContentFile pathExtension]]) {
 			
-			NSString *moveFileToTempDir = nil;
-			if ([[[NSUserDefaults standardUserDefaults] stringForKey: @"tempMonitoredFolder"] hasPrefix: @"/"]) {
-				moveFileToTempDir = [[NSUserDefaults standardUserDefaults] stringForKey: @"tempMonitoredFolder"];
-			} else {
-				moveFileToTempDir = [monitorPath stringByAppendingPathComponent: @"queued"];
-			}
-			
-			NSString *orgFile = [monitorPath stringByAppendingPathComponent: monitorFolderContentFile];
-			NSString *tempFile = [moveFileToTempDir stringByAppendingPathComponent: monitorFolderContentFile];
-
-			if (moveFileToTempDir != nil) {
-				[[NSFileManager defaultManager] createDirectoryAtPath: moveFileToTempDir withIntermediateDirectories: YES attributes: nil error: NULL];
-				
-				NSError *errorOnMove;
-				if ([[NSFileManager defaultManager] moveItemAtPath: orgFile toPath: tempFile error: &errorOnMove]) {
-					[self queueThisFile: tempFile withOrgURLEntry: orgFile];
-					
-				} else {
-					NSLog(@"Error on move for monitoring: %@", [errorOnMove localizedDescription]);
-				}
-				
-			} else {
-				NSLog(@"No TempMonitorDir");
-			}
+            if (![[self.database executeQuery: @"SELECT * FROM imports WHERE name = ?", monitorFolderContentFile] next]) {
+                NSString *filePath = [monitorPath stringByAppendingPathComponent: monitorFolderContentFile];
+                NSLog(@"Found new file: %@", filePath);
+                [self queueThisFile: filePath];
+                
+                [self.database executeUpdate:@"INSERT INTO imports VALUES (?)",monitorFolderContentFile];
+            }
 			
 		}
 		
@@ -1156,8 +1164,10 @@
 	NSArray *_argumentComponents = [_argumentString componentsSeparatedByString: @" -"]; // find all ffmpeg arguments by splitting
 	for (NSString *_argumentComponent in _argumentComponents) {
 		int firstSpaceLocation = [_argumentComponent rangeOfString: @" "].location;
-		if (firstSpaceLocation != NSNotFound) {
+		if (firstSpaceLocation != NSNotFound && firstSpaceLocation != -1) {
 			// this ffmpeg argument comes with a variable
+            
+            NSLog(@"fs %d in: (%@)", firstSpaceLocation, _argumentComponent);
 			
 			NSString *_argumentPart1 = [_argumentComponent substringToIndex: firstSpaceLocation];
 			if (![_argumentPart1 hasPrefix: @"-"]) _argumentPart1 = [NSString stringWithFormat: @"-%@", _argumentPart1]; // eventually add the missing prefix again, caused by the split

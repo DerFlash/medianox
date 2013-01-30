@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+#include <FMDatabase.h>
 
 @interface MediaNox : NSObject {
 
@@ -51,7 +52,6 @@
 	IBOutlet NSPopUpButton *tempMonitoredFolderPopupButton;
 	IBOutlet NSPopUpButton *importDestinationPopupButton;
 }
-
 
 - (void) saveQueue;
 - (void) loadQueue;
